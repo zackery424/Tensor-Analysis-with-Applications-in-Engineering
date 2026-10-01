@@ -1,0 +1,343 @@
+\chapter{Tensor Calculus}
+
+Let $S \in E_3$ be a point set. A tensor field of order $N$ on $S$ is an $N$-th order tensor valued function of position defined on $S$. Before the next section, we need to review some concepts in vector calculus in appendix \ref{appendix: Some definitions concerning curves, surfaces, and regions}.
+\section{Smoothness of tensor fields}
+Let $R$ be a region in $E_3$. Let $\tenq{V}$ be a tensor field of order $N$ on $R$. $\tenq{V}$ is continuous on $R$ and we will write $\tenq{V} \in C(R)$ if the functions $V_{\underbrace{ij \cdots k}_{N}}^{X}$ are continuous scalar functions on $R$ $\forall X \in \mathscr{F}$. We say that $\tenq{V}$ is $M$ times continuously differentiable on $R$ ($M$ is positive integer) and write $\tenq{V} \in C^M(R)$ if $\tenq{V} \in C(R)$ and the partial derivatives $\frac{{{\partial ^M}V_{ij \cdots k}^X}}{{\underbrace {\partial {x_p}\partial {x_q} \cdots \partial {x_r}}_M}} = V_{\underbrace {ij \cdots k}_N,\underbrace {pq \cdots r}_M}^X$ exist on $\mathring{R}$ $\forall X \in \mathscr{F}$ and they coincide with continuous function. 
+
+\begin{theorem}
+Let $R$ be a domain (open region) and $\tenq{V} \in C^M(R)$ $(M \geq 1)$ be a tensor field of order $N$.\\
+Define 
+
+\[W_{ij \cdots ks}^X(\tenq{x}) = \frac{\partial }{{\partial {x_s}}}\left\{ {V_{ij \cdots k}^X(\tenq{x})} \right\},\forall \tenq{x} \in R,\forall X \in \mathscr{F}\]
+
+where $x_s$ are the coordinates in $X$ of points in $R$. 
+
+\begin{figure}[H]
+\centering
+\input{figure1.eps_tex}
+\caption{Scheme for $R$}
+\label{Scheme for $R$}
+\end{figure}
+
+
+Then $W_{ij \cdots ks}^X$ are the $3^{N+1}$ components in $X$ of a tensor field $\tenq{W}$ of order $N+1$ and $\tenq{W} \in C^{M-1}(R)$.\\
+One calls $\tenq{W}$ the \emph{gradient} of $\tenq{V}$ and writes
+\[\tenq{W} = \textit{grad }\tenq{V}=\nabla \tenq{V}\] 
+Also
+\[W_{ij \cdots ks}^X = V_{ij \cdots k,s}^X \footnote{partial derivative with respect to $x_s$}\]
+
+\begin{proof}\mbox{}\\
+Consider $X = \left\{ {0;\tenq{e}_1,\tenq{e}_2,\tenq{e}_3} \right\} \in \mathscr{F}$, $X' = \left\{ {0;\tenq{e'}_1,\tenq{e'}_2,\tenq{e'}_3} \right\} \in \mathscr{F}$ and the matrix $\tenq{A}$ of direction cosine that transforms $X$ to $X'$ $(\tenq{A}\colon X \to X')$.
+\[
+\begin{cases}
+\tenq{x} = x_i\tenq{e}_i = x'_m\tenq{e'}_m\\
+x'_m = A_{mi}x_i, x_i = A_{mi}x'_m
+\end{cases}
+\]
+
+\begin{align*}
+W_{pq \cdots rs}^{X'}(\tenq{x}) 
+&= \frac{\partial }{{\partial {x'_s}}}\left\{ {V_{pq \cdots r}^{X'}(\tenq{x})} \right\} 
+= \frac{\partial }{{\partial {x'_s}}}\left\{A_{pi}A_{qj} \cdots A_{rk} {V_{ij \cdots k}^{X}(\tenq{x})} \right\} \\
+&= \frac{\partial }{{\partial {x_l}}}\left\{A_{pi}A_{qj} \cdots A_{rk} {V_{ij \cdots k}^{X}(\tenq{x})} \right\}\frac{{\partial {x_l}}}{{\partial {x'_s}}}
+\end{align*}
+
+where 
+\[\frac{{\partial {x_l}}}{{\partial {{x'}_s}}} = \frac{{\partial \left( {{A_{ml}}{{x'}_m}} \right)}}{{\partial {{x'}_s}}} = {A_{ml}}\frac{{\partial {{x'}_m}}}{{\partial {{x'}_s}}} = {A_{ml}}{\delta _{ms}} = {A_{sl}}\] \nonumber
+
+\begin{align*}
+\therefore W_{pq \cdots rs}^{X'}(\tenq{x}) 
+&= A_{pi}A_{qj} \cdots A_{rk}A_{sl}\frac{\partial }{{\partial {x_l}}}\left\{ {V_{pq \cdots r}^{X}(\tenq{x})} \right\}\\
+&= A_{pi}A_{qj} \cdots A_{rk}A_{sl} W_{ij \cdots kl}^{X}(\tenq{x})
+\end{align*}
+satisfies the transformation law
+\end{proof}
+
+\end{theorem}
+
+\section{Relation to vector calculus}
+
+Let $R$ be a domain. Let $\phi$ and $\tenq{v}$ be suitably smooth scalar and vector field respectively. \\
+
+Define
+
+%\begin{align*}
+%\tenq{W} &= \textit{grad }\phi \equiv \nabla\phi \textit{ if } w_i = \phi_{,i} = \frac{\partial \phi}{\partial x_i}\\
+%\psi &= \textit{div }\phi \equiv \nabla\cdot\tenq{V} \textit{ if } \psi = v_{i,i} = \frac{\partial v_i}{\partial x_i}\\
+%\end{align*}
+
+\begin{alignat*}{4}
+&\tenq{w} &=   &\textit{grad }\phi          &\quad\equiv &  \nabla\phi  & \quad \textit{ if }w_i &= \phi_{,i}  = \frac{\partial \phi}{\partial x_i}\\
+&\psi  &= &\textit{div }\tenq{v}          &\quad\equiv &   \nabla\cdot\tenq{v} &\quad \textit{ if }\psi &= v_{i,i} = \frac{\partial v_i}{\partial x_i}\\
+&\tenq{w}  &= &\textit{curl }\tenq{v}          &\quad\equiv &   \nabla\wedge\tenq{v} &\quad \textit{ if } w_i &= \epsilon_{ijk}\frac{\partial}{\partial x_j}v_k = \epsilon_{ijk}v_{k,j}\\
+&\psi  &= &\textit{Lap }\phi          &\quad\equiv &   \nabla^2\phi  &\quad \textit{ if } w_i &= \phi_{,ii} = \frac{\partial^2\phi}{\partial x_1^2} + \frac{\partial^2\phi}{\partial x_2^2} + \frac{\partial^2\phi}{\partial x_3^2}\\
+&\tenq{w}  &= &\textit{Lap }\tenq{v}          &\quad\equiv &   \nabla^2\tenq{v}  &\quad \textit{ if } w_i &= v_{i,kk}\\ 
+\end{alignat*}
+
+\begin{notation}\mbox{}\\
+\begin{itemize}
+\item $\nabla \phi \neq \phi_{,i}$ but ${\left( {\nabla \phi } \right)_i} = {\phi _{,i}}$ or $\nabla \phi  = {\phi _{,i}}\tenq{e}_i$
+\item $\nabla^2\tenq{v} = v_{i,kk}\tenq{e}_i$
+\end{itemize}
+\end{notation}
+
+
+
+\begin{example}
+$\tenq{u} \in C^1(R)$ is a vector field. Show that
+\[\tenq{u} \wedge \left( {\nabla  \wedge \tenq{u}} \right) = \frac{1}{2}\nabla \left( {\tenq{u} \cdot \tenq{u}} \right) - \left( {\tenq{u} \cdot \nabla } \right)\tenq{u}\]
+which is important relation for continuum mechanics.
+\end{example}
+
+\begin{proof}
+\begin{align*}
+{\left[ \tenq{u} \wedge \left( {\nabla  \wedge \tenq{u}} \right) \right]_i} 
+&= \epsilon_{ijk}u_j\left( {\nabla  \wedge \tenq{u}} \right)_k = \epsilon_{ijk}u_j\epsilon_{klm}u_{m,l}\\
+&= \epsilon_{ijk}\epsilon_{klm}u_j u_{m,l} = \left( \delta_{il}\delta_{jm} - \delta_{im}\delta_{jl} \right)u_j u_{m,l}\\
+&= u_ju_{j,i} - u_ju_{i,j} = u_j \frac{\partial u_j}{\partial x_i} - u_j \frac{\partial u_i}{x_j}\\
+&= \frac{1}{2} \frac{\partial \left(u_ju_j\right)}{\partial x_i} - u_j \frac{\partial u_i}{\partial x_j} \\
+&= \frac{1}{2} \left[\nabla \left(\tenq{u} \cdot \tenq{u} \right) \right]_i - \left[\left(\tenq{u} \cdot \nabla \right)\tenq{u}\right]_i
+\end{align*}
+\[\therefore \tenq{u} \wedge \left( {\nabla  \wedge \tenq{u}} \right) = \frac{1}{2}\nabla \left( {\tenq{u} \cdot \tenq{u}} \right) - \left( {\tenq{u} \cdot \nabla } \right)\tenq{u} \]
+\end{proof}
+
+\begin{example}
+Show that 
+
+\[\nabla \wedge \left(\nabla \wedge \tenq{u} \right) = \nabla\left(\nabla \cdot \tenq{u} \right) - \nabla^2\tenq{u}\]
+\end{example}
+
+\begin{proof}
+
+\begin{align*}
+\left[ \nabla \wedge \left(\nabla \wedge \tenq{u} \right) \right]_i
+&= \epsilon_{ijk}\left(\nabla \wedge \tenq{u} \right)_{k,j} = \epsilon_{ijk} \left(\epsilon_{klm}u_{m,l}\right)_{,j}\\
+&= \epsilon_{kij}\epsilon_{klm}u_{m,lj} = \left( \delta_{il}\delta_{jm} - \delta_{im}\delta_{jl} \right)u_{m,lj}\\
+&= u_{j,ij} - u_{i,jj} = \underbrace{\frac{\partial}{\partial x_i}\left(\nabla \cdot \tenq{u}\right)}_{\left[\nabla\left(\nabla\cdot\tenq{u}\right)\right]_i}  - \left(\nabla^2\tenq{u}\right)_i
+\end{align*}
+
+\[\therefore \nabla \wedge \left(\nabla \wedge \tenq{u} \right) = \nabla\left(\nabla \cdot \tenq{u} \right) - \nabla^2\tenq{u} \]
+
+\end{proof}
+
+Let $R$ be a domain and $\tenq{W}$ be a suitably smooth $2^{nd}$ order tensor. 
+
+Define
+
+\begin{alignat*}{4}
+&\tenq{T} &=   &\textit{grad }\tenq{W}          &\quad\equiv &  \nabla\tenq{W}  & \quad \textit{ if }T_{ijk} &= W_{ij,k} \phantom{-}(\tenq{T} \colon 3^{rd} order)\\
+&\tenq{v}  &= &\textit{div }\tenq{W}          &\quad\equiv &   \nabla\cdot\tenq{W} &\quad \textit{ if }  v_{i} &= W_{ij,j} \phantom{-}(\tenq{v} \colon vector)\\
+&\tenq{U}  &= &\textit{curl }\tenq{W}          &\quad\equiv &   \nabla\wedge\tenq{W} &\quad \textit{ if } U_{ij} &= \epsilon_{ipq}\frac{\partial}{\partial x_p}W_{jq}  \phantom{-}(\tenq{U} \colon 2^{nd} order)\\
+&\tenq{U}  &= &\textit{Lap }\tenq{W}          &\quad\equiv &   \nabla^2\tenq{W}  &\quad \textit{ if } U_{ij} &= W_{ij,kk} \phantom{-}(\tenq{U} \colon 2^{nd} order)\\ 
+\end{alignat*}
+
+\section{Divergence theorem}
+
+Let $R$ be a bounded closed region. Let $\tenq{v}\in C(R) \cap C^1(\mathring{R})$ be a vector field and suppose $\nabla \cdot \tenq{v} \in C(R)$. 
+
+
+\begin{figure}[H]
+\centering
+\input{figure2.eps_tex}
+\caption{Scheme for $R$}
+\label{Scheme for $R$ 2}
+\end{figure}
+
+Then
+
+\[\int_{\partial R} {\tenq{v} \cdot \tenq{n} dA}  = \int_R {\nabla  \cdot \tenq{v} d\volume} \]
+or 
+
+
+\begin{equation}
+\int_{\partial R} {v_i n_i dA}  = \int_R {v_{i,i} d\volume}\label{eq:divergence thm}\tag{$\ast$}
+\end{equation}
+
+where $\tenq{n}$ is the outer unit normal vector on $\partial R$. \\
+Further, the indicial version $\eqref{eq:divergence thm}$ holds if $v_i$ are merely a triplet of real valued functions, rather than the components of a vector field.  
+
+\[
+\Rightarrow 
+\int_{\partial R} {\left(\bullet\right) n_i dA}  = \int_R {\left(\bullet\right)_{,i} d\volume}
+\]
+
+\begin{example}\mbox{}\\
+
+\begin{itemize}
+\item $\int_{\partial R} {\phi n_i dA}  = \int_R {\phi_{,i} d\volume}$
+\item $\int_{\partial R} {W_{ij} n_j dA}  = \int_R {W_{ij,j} d\volume}$
+\end{itemize}
+\end{example}
+
+\begin{theorem}\label{1st theorem}
+Let $R$ be a domain $(R = \mathring{R})$, $\tenq{v}$ be a vector field on $R$ and $\mathring{\tenq{x}}$ be the position vector of a point in $R$. $(R$ can be simply/multiply connected, bounded or unbounded$)$
+
+\begin{enumerate}[label=(\alph*)]
+\item 
+
+If $\phi \in C^{N+1}(R)$ $(N\geq1)$ is a scalar field such that
+
+\begin{equation} 
+\tenq{v} = \nabla \phi \text{ on } R
+\label{1-(i)} \tag{i}
+\end{equation}
+
+then 
+
+\begin{equation}
+\tenq{v} \in C^{N}(R), \nabla \wedge \tenq{v} = \tenq{0} \text{ or } \epsilon_{ijk}v_{k,j} = 0 \text{ or } v_{i,j} = v_{j,i}
+\label{1-(ii)} \tag{ii}
+\end{equation}
+
+and the line integral 
+\begin{align}
+\int_{\mathring{\tenq{x}}}^{\tenq{x}} \tenq{v}(\tenq{\xi})\cdot \,d\tenq{\xi} 
+&= \int_{\mathring{\tenq{x}}}^{\tenq{x}} v_i(\tenq{\xi}) \,d\xi_i \nonumber \\
+&= \int_{\mathring{\tenq{x}}}^{\tenq{x}} 
+\left[ 
+v_1(\tenq{\xi}) \,d\xi_1 + v_2(\tenq{\xi}) \,d\xi_2 + v_3(\tenq{\xi}) \,d\xi_3
+\right]
+\label{1-(iii)} \tag{iii}
+\end{align}
+is path independent $\forall \tenq{x} \in R$.
+
+\item 
+Conversely, if $R$ is a \emph{simply connected} domain and \tenq{v} is a vector field satisfying \eqref{1-(ii)}, then the line integral is path independent, i.e. \eqref{1-(iii)} holds; and further there exists a scalar field $\phi \in C^{N+1}(R)$ unique up to a constant such that \eqref{1-(i)} holds and 
+
+\[
+\phi(\tenq{x}) - \phi(\mathring{\tenq{x}}) = \int_{\mathring{\tenq{x}}}^{\tenq{x}} \tenq{v}(\tenq{\xi})\cdot \,d\tenq{\xi} 
+\]
+
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+Let $R$ be a domain and \tenq{T} be a $2^{nd}$ order tensor field on $R$. 
+
+\begin{enumerate}[label=(\alph*)]
+\item If $\tenq{v}\in C^{N+1}(R) (N\geq1)$ is a vector field such that
+
+\begin{equation}
+\tenq{T} = \nabla \tenq{v} \text{ or } T_{ij} = v_{i,j} \text{ on } R \label{eq:2-i}\tag{i}
+\end{equation}
+
+then 
+
+\begin{equation}
+\tenq{T} \in C^{N}(R), \nabla \wedge \tenq{T} = \tenq{0}\footnotemark \text{ on } R \label{eq:2-ii}\tag{ii}
+\end{equation}
+\footnotetext{$2^{nd}$ order tensor }
+
+\item
+
+Conversely, if $R$ is simply connected and if $\tenq{T}$ satisfies  \eqref{eq:2-ii}, then exists a vector field $\tenq{v} \in C^{N+1}(R)$ such that \eqref{eq:2-i} holds. \\
+
+Further, if in addition to \eqref{eq:2-ii}
+
+\begin{equation}
+\tr \tenq{T} = 0 \text{ on } R \label{eq:2-iii}\tag{iii}
+\end{equation}
+
+Then exists a $2^{nd}$ order tensor field $\tenq{W} \in C^{N+1}(R)$ such that
+
+\begin{equation}
+\tenq{W}^T = -\tenq{W} \text{ and } \tenq{T} = \nabla \wedge \tenq{W}\text{ on } R\label{eq:2-iv}\tag{iv}
+\end{equation}
+or 
+
+\[T_{ij} = \epsilon_{ipq}W_{jq,p}\]
+
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}\mbox{}\\
+
+\begin{enumerate}[label=(\alph*)]
+
+\item
+If $\tenq{T} = \nabla \tenq{v}$, then 
+\begin{align*}
+\left(\nabla \wedge \tenq{T} \right)_{ij} 
+&= \left(\nabla \wedge \nabla\tenq{v} \right)_{ij} = \epsilon_{ipq} \left(\bullet\right)_{jq,p}\\
+&= \epsilon_{ipq} \left(v_{j,q}\right)_{,p} = \epsilon_{ipq} v_{j,qp}\\
+&= -\epsilon_{iqp}v_{j,qp} \overset{p \leftrightarrow q}{=} -\epsilon_{ipq}v_{j,pq} = 0
+\end{align*}
+
+\item
+
+First prove that
+
+\begin{equation}
+\nabla \wedge \left(\tenq{T}^T\tenq{a}\right) = \left(\nabla \wedge \tenq{T} \right)\tenq{a} \text{ if } \tenq{a=} \text{ constant vector} \label{eq:2-1}\tag{1}
+\end{equation}
+
+\begin{align*}
+\left[\nabla \wedge \left(\tenq{T}^T\tenq{a}\right) \right]_i 
+&= \epsilon_{ijk}\left(\tenq{T}^T\tenq{a}\right)_{k,j} = \epsilon_{ijk}\left(T_{km}^T a_m\right)_{,j}\\
+&= \epsilon_{ijk}\left(T_{mk} a_m\right)_{,j} = \epsilon_{ijk}T_{mk,j}a_m\\
+&= \left(\nabla \wedge \tenq{T}\right)_{im}a_m = \left[\left(\nabla \wedge \tenq{T}\right)\tenq{a}\right]_i
+\end{align*}
+
+Choose a coordinate frame $X = \left\{ {0;\tenq{e}_1,\tenq{e}_2,\tenq{e}_3} \right\} \in \mathscr{F}$ and let $\tenq{t}_k$ (denote 3 vectors) defined as $\in \mathscr{F}$ follows
+
+\[\tenq{t}_k = \tenq{T}^T\tenq{e}_k\phantom{-}(k = 1,2,3)\]
+Recalls that $\tenq{T}$ is such that $\tenq{T} \in C^N(R)$, $\nabla \wedge \tenq{T} = \tenq{0}$ on $R$ \eqref{eq:2-ii}\\
+
+Consider now 
+
+\[\nabla \wedge \tenq{t}_k = \nabla \wedge\left( \tenq{T}^T\tenq{e}_k \right) \overset{\eqref{eq:2-1}}{=} \left(\nabla \wedge \tenq{T}\right)\tenq{e}_k \overset{\eqref{eq:2-ii}}{=} \tenq{0}\]
+
+Thus 
+
+\[\nabla \wedge \tenq{t}_k = \tenq{0} \text{ on } R \text{ for }k = 1,2,3\]
+
+\end{enumerate}
+
+So from the Theorem \ref{1st theorem}
+
+\[\tenq{t}_k = \tenq{T}^T\tenq{e}_k = \nabla \phi_k \text{ on }R, \phi_k \in C^{N+1}(R)\]
+
+Thus
+
+\[
+\left(\tenq{T}^T\right)_{ij}^X \left(\tenq{e}_k\right)_j = T_{ji}^X \delta_{kj} = \phi_{k,i}\Rightarrow T_{ki}^X = \phi_{k,i} \text{ on }R
+\]
+
+Define a new vector field $\tenq{v} = \phi_k\tenq{e}_k$, then 
+\[T_{ki}^X = \phi_{k,i} = v_{k,i}\]
+\[\Rightarrow \tenq{T} = \nabla \tenq{v} \text{ on }R \text{ and }\eqref{eq:2-i} \text{ holds}\]
+
+For the $2^{nd}$ part, assume that $\tenq{v}$ is the vector field established above, i.e. $\nabla\tenq{v} = \tenq{T}$. \\
+Suppose $\tenq{T}$ satisfies \eqref{eq:2-ii} and \eqref{eq:2-iii}, i.e.
+
+\begin{equation}
+\nabla \wedge \tenq{T} = \tenq{0} \text{ and }\tr \tenq{T} = 0\label{eq:2-2}\tag{2}
+\end{equation}
+
+
+Then 
+\begin{equation}
+\tr  \tenq{T} = trv_{i,j} = v_{i,i} = 0\label{eq:2-3}\tag{3}
+\end{equation}
+
+Define now a $2^{nd}$ order tensor field $\tenq{W} \in C^{N+1}(R)$ by 
+
+\begin{equation}
+W_{jq} = \epsilon_{jqk}v_k \text{ on }R \label{eq:2-4}\tag{4}
+\end{equation}
+
+Obviously
+
+\[\tenq{W}^T = -\tenq{W}\]
+and
+
+\begin{align*}
+\left(\nabla\wedge\tenq{W}\right)_{ij}
+&= \epsilon_{ipq}W_{jq,p} \overset{\eqref{eq:2-4}}{=} \epsilon_{ipq}\epsilon_{jqk}v_{k,p}\\
+&= -\epsilon_{qip}\epsilon_{qjk}v_{k,p} = -\left(\delta_{ij}\delta_{pk}-\delta_{ik}\delta_{pj}\right)v_{k,p}\\
+&= -\delta_{ij}{\underbrace{v_{p,p}}_{=0(by \eqref{eq:2-iii})}} + v_{i,j} = v_{i,j}
+\end{align*}
+
+\[\Rightarrow \nabla \wedge \tenq{W} = \nabla\tenq{v} = \tenq{T}\]
+
+\end{proof}

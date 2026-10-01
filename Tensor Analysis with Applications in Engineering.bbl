@@ -1,0 +1,23 @@
+\begin{thebibliography}{1}
+
+\bibitem{avis1962vectors}
+Rutherford Avis.
+\newblock {\em Vectors, Tensors and the Basic Equations of Fluid Mechanics}.
+\newblock Dover Publications, 1962.
+
+\bibitem{hughes1964basic}
+William~F Hughes, Eber~W Gaylord, and George~W Hughes.
+\newblock {\em Basic equations of engineering science}.
+\newblock McGraw-Hill New York, 1964.
+
+\bibitem{lebedev2010tensor}
+Leonid~P Lebedev, Michael~J Cloud, and Victor~A Eremeyev.
+\newblock {\em Tensor analysis with applications in mechanics}.
+\newblock World Scientific, 2010.
+
+\bibitem{temple2004cartesian}
+George Frederick~James Temple.
+\newblock {\em Cartesian Tensors: an introduction}.
+\newblock Courier Corporation, 2004.
+
+\end{thebibliography}

@@ -1,0 +1,516 @@
+\chapter{Thermodynamics of Bodies}
+
+Up to this point: \emph{purely mechanical} primitive notions.\\
+
+Introduce new concepts:
+%\begin{enumerate}[label=(\Alph*)]
+
+\begin{enumerate}
+\item 
+Internal energy (specific internal energy)
+
+\item
+Heating (heat flux and heat supply)
+
+\end{enumerate}
+
+Those will be restricted together with other constituents of the early discussion of motions (dynamic processes) to be obey the 
+
+\begin{enumerate}[label=(\Alph*)]
+
+\item
+Axiom of energy conservation (the first law of thermodynamics)\\
+further introduce notions of 
+
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumii}{2}
+\item
+Entropy (or Carlory) $\cdots$ specific entropy
+
+\item
+Absolute temperature
+
+\end{enumerate}
+and all of the above will obey a second postulate called the 
+
+\item
+Entropy inequality (Clausius-Duhem or Truesdell-Toupin) which is a particular version of the second law of thermodynamics.
+
+\end{enumerate}
+
+\section{Energetic Axioms}
+
+Let $\tenq{y} = \hat{\tenq{y}}(\tenq{x},t)$ be and admissible motions. \\[3pt]
+
+
+\fbox{Principle 1.}\\[3pt]
+
+There exists a scalar field $\varepsilon(\bullet,t)\colon R_t \to R\phantom{-}\forall t \in \tau$ with $\varepsilon\in C^1(R_t \times \tau)$ called the specific internal energy (energy per unit mass) such that 
+
+\[\int_{P_t}\varepsilon(\tenq{y},t)\rho(\tenq{y},t)d\volume_{\tenq{y}} = E(P_t)\]
+
+\[E(P_t)\cdots\text{total internal energy of }P_t \subset R_t\]
+dim $\varepsilon = $ Energy/mass\\[3pt]
+
+
+\fbox{Principle 2.}\\[3pt]
+
+There exists for each $\tenq{n}\in u$ a scalar field $\hslash(\tenq{n},\bullet,t)\in C^1(R_t)$ called \emph{the heat flux} such that
+
+\begin{align*}
+\int_{\partial P_t}\hslash(\tenq{n}(\tenq{y},t),\tenq{y},t)dA_{\tenq{y}} 
+&= \text{total contact heating}\\
+&\equiv Q^c \text{ (due to heat conduction)}
+\end{align*}
+
+dim $\hslash = \frac{\text{Energy}}{\text{(unit area)(unit time)}}$\\
+dim $Q^c = \frac{\text{Energy}}{\text{unit time}}$\\[3pt]
+
+\fbox{Principle 3.}\\[3pt]
+
+There exists a scalar field $r(\bullet,t)\in C(R_t)$ called the specific heat supply (per unit mass) such that 
+
+
+\begin{align*}
+\int_{P_t}r(\tenq{y},t)\rho(\tenq{y},t)d\volume_{\tenq{y}}
+&= \text{Body heating}\\
+&\equiv Q^r \text{ (due to radiation)}
+\end{align*}
+
+
+
+
+Total heating of $P_t$
+
+\begin{align*}
+Q(P_t) = Q^c + Q^r 
+&= \int_{\partial P_t}\hslash(\tenq{n},\tenq{y},t)dA_{\tenq{y}}\\
+&+ \int_{P_t}r(\tenq{y},t)\rho(\tenq{y},t)d\volume_{\tenq{y}}
+\end{align*}
+
+
+For a motion recall also that
+
+\[K(P_t) = \int_{P_t} \frac{1}{2}\rho(\tenq{y},t)\abs{\bar{\tenq{v}}(\tenq{y},t)}^2 d\volume_{\tenq{y}}\]
+
+While the mechanical power $P(P_t)$
+
+\begin{align*}
+P(P_t) 
+&= \int_{\partial P_t}\tenq{t}(\tenq{n}(\tenq{y},t),\tenq{y},t)\cdot\bar{\tenq{v}}(\tenq{y},t)dA_{\tenq{y}}\\
+&+ \int_{P_t}\tenq{b}(\tenq{y},t)\cdot\bar{\tenq{v}}(\tenq{y},t)d\volume_{\tenq{y}}
+\end{align*}
+
+\begin{axiom}{Conservation (Balance) of Energy}
+
+$\forall P_t \in R_t$\\
+
+\[\frac{d}{dt}\left[E(P_t) + K(P_t)\right] = P(P_t) + Q(P_t)\]
+
+Namely:\\
+
+The rate of change of internal + kinetic energy  of each subbody equals the mechanical power + the heating. 
+
+\begin{equation}
+\begin{split}
+\Rightarrow 
+&\frac{d}{dt}\int_{P_t}\rho\left[\varepsilon + \frac{1}{2}\bar{\tenq{v}}\cdot\bar{\tenq{v}}\right]d\volume\\
+&= \int_{P_t}\left[\tenq{b}\cdot\bar{\tenq{v}} + r\rho\right]d\volume + \int_{\partial P_t}\left[\hslash(\tenq{n}) + \tenq{t}(\tenq{n})\cdot\bar{\tenq{v}}\right]dA
+\end{split}
+\tag{$\circledS$} \label{Energetic Axioms_circles} 
+\end{equation}
+\end{axiom}
+
+\begin{theorem}{Local Energy Balance, Heat flux vector}
+
+Let $\hat{\tenq{y}}\colon R\to R_t$ with mass density $\rho(\bullet,t)$ and spatial velocity $\bar{\tenq{v}}(\bullet,t)$ on $R_t$. Then the specific internal energy $\varepsilon(\bullet,t)$, the heat flux $\hslash(\tenq{n},\bullet,t)$ and heat supply $r(\bullet,t)$ on $R_t$ abiding by Principle 1, Principle 2, and Principle 3, are such that $\eqref{Energetic Axioms_circles}$ holds \emph{if and only if} 
+
+\begin{enumerate}[label=(\roman*)]
+
+\item
+There exists a vector field 
+
+\[\tenq{q}(\bullet,t)\colon R_t\to E_3, \tenq{q}(\bullet,t)\in C^1(R_t)\]
+
+such that
+
+\[\hslash(\tenq{n},\tenq{y},t) = -\tenq{q}(\tenq{y},t)\cdot\tenq{n}\phantom{-}\forall\tenq{y}\in R_t\phantom{-}\forall\tenq{n}\in u\]
+
+\item
+\begin{align*}
+&\tenq{\tau}(\tenq{y},t)\cdot\tenq{D}(\tenq{y},t)-\nabla\cdot\tenq{q}(\tenq{y},t) + \rho(\tenq{y},t)r(\tenq{y},t)\\
+&= \rho(\tenq{y},t)\dot{\varepsilon}(\tenq{y},t)\phantom{-}\forall (\tenq{y},t)\in R_t\times\tau
+\end{align*}
+
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}\mbox{}\\
+
+First recall the power identity: 
+
+\begin{equation}
+\frac{d}{dt}K(P_t) = P(P_t) - \int_{P_t}\tenq{\tau}\cdot\tenq{D}d\volume
+\tag{1} \label{Energetic Axioms-(1)}
+\end{equation}
+
+Also 
+
+\begin{equation}
+\frac{d}{dt}E(P_t) = \frac{d}{dt}\int_{P_t}\rho\varepsilon d\volume \vc{=}{RTT}{} \int_{P_t}\rho(\tenq{y},t)\dot{\varepsilon}(\tenq{y},t)d\volume
+\tag{2} \label{Energetic Axioms-(2)}
+\end{equation}
+
+where $\dot{\varepsilon} = \frac{\partial \varepsilon}{\partial t} + \left(\nabla\varepsilon\right)\cdot\bar{\tenq{v}}$\\
+
+Substitute \eqref{Energetic Axioms-(1)} and \eqref{Energetic Axioms-(2)} in $\eqref{Energetic Axioms_circles}$
+
+\begin{equation}
+\int_{P_t}\rho\dot{\varepsilon}d\volume = \int_{\partial P_t}\hslash(\tenq{n})dA + \int_{P_t}\left[\rho r + \tenq{\tau}\cdot\tenq{D}\right]d\volume
+\tag{3} \label{Energetic Axioms-(3)}
+\end{equation}
+
+Repeat proof used in obtaining $\tenq{t} = \tenq{\tau}\tenq{n}$, i.e. choose $P_t$ to be a tetrahedron $P_t(h)$, with height $h$ and let $h\to 0$. 
+
+\begin{equation}
+\Rightarrow \hslash(\tenq{n},\tenq{y},t) = -\tenq{q}(\tenq{y},t)\cdot\tenq{n}
+\tag{4} \label{Energetic Axioms-(4)}
+\end{equation}
+
+\[\eqref{Energetic Axioms-(3)} \& \eqref{Energetic Axioms-(4)} \Rightarrow\int_{P_t}\rho\dot{\varepsilon}d\volume = -\int_{\partial P_t}\tenq{q}\cdot\tenq{n}dA + \int_{P_t}\left[\rho r + \tenq{\tau}\cdot\tenq{D}\right]d\volume\]
+
+\[\vc{\Rightarrow}{divegence }{theorem} \int_{P_t} \left[\rho\dot{\varepsilon} + \nabla\cdot\tenq{q}-\rho r -\tenq{\tau}\cdot\tenq{D}\right]d\volume = 0\]
+
+Smoothness of $\rho$, $\varepsilon$, $\hslash$ (or $\tenq{q}$), $r$, $\cdots$ and localization argument gives
+
+\[\tenq{\tau}\cdot\tenq{D}-\nabla\cdot\tenq{q}+\rho r = \rho \dot{\varepsilon}\]
+
+\end{proof}
+
+Consequences of the \\
+
+\fbox{First law}
+\[\int_{P_t}\rho\dot{\varepsilon}d\volume = \int_{\partial P_t}\underbrace{\hslash(\tenq{n})}_{\text{heat flux}}dA + \int_{P_t}\left[\underbrace{\rho r}_{\text{specific heat supply}} + \tenq{\tau}\cdot\tenq{D}\right]d\volume\]
+
+\[\Rightarrow \hslash(\tenq{n},\tenq{y},t) = -\underbrace{\tenq{q}(\tenq{y},t)}_{\text{heat flux vector}}\cdot\tenq{n}\]
+
+also
+
+
+\begin{equation}
+\boxed{
+\tenq{\tau}\cdot\tenq{D}-\nabla\cdot\tenq{q}+\rho r = \rho \dot{\varepsilon}
+}\cdots\text{local version of $1^{st}$ law}
+\tag{$\ast$} \label{Energetic Axioms-(*)}
+\end{equation}
+
+\section{Motivation and comparison with classical thermodynamics}
+
+A thermodynamics consider processes which are homogeneous (independent of position $\tenq{y}$). 
+
+
+\begin{alignat*}{3}
+& \text{Internal energy }     \quad && \colon \quad && \varepsilon(t)\\
+& \text{Pressure } \quad && \colon 	\quad &&  p(t)\\
+& \text{Volume }  \quad && \colon	\quad && v(t)\\
+& \text{Heating } \quad && \colon	\quad && \tilde{q}(t)
+\end{alignat*}
+%& \phantom{-}  \quad && \phantom{-}	\quad && \phantom{-}	\quad && \text{(rotation)} \\	
+(no distinction between conduction and radiation)\\
+
+The first law (compare to $\eqref{Energetic Axioms-(*)}$)
+
+\[\dot{\varepsilon} = p\dot{v} + \tilde{q}\]
+\begin{align*}
+\dot{\varepsilon}
+&\cdots \rho\dot{\varepsilon}(\tenq{y},t)\\
+p\dot{v}
+&\cdots \tenq{\tau}(\tenq{y},t)\cdot\tenq{D}(\tenq{y},t)\\
+\tilde{q}
+&\cdots -\nabla\cdot\tenq{q}(\tenq{y},t) + \rho(\tenq{y},t)r(\tenq{y},t)
+\end{align*}
+
+For the second law one introduces an entropy $\eta(t)$ and an absolute temperature $\theta(t) > 0$. The second law assumes an upper bound for the quantity $\tilde{q}(t)/\theta(t)$, i.e. 
+
+\[\dot{\eta}(t)\geq \frac{\tilde{q}(t)}{\theta(t)}\]
+
+(Entropy rate exceeds or equals heating over temperature)\\
+
+First and second law 
+\[\Rightarrow \theta \dot{\eta}-\left(\dot{\varepsilon}-p\dot{v}\right)\geq 0\]
+
+(Entropy rate $\times$ temperature $\geq$ internal energy rate $-$ mechanical power \footnote{rate of energy \emph{not} produced by mechanical work which is reversible process})
+
+
+\section{Axioms of entropy and temperature}
+
+
+\fbox{Principle 4.}\\
+Given a motion $\hat{\tenq{y}}(\bullet,t)\colon R\to R_t$, $t \in [t_0,t_1]=\tau$, define a scalar field $\eta(\bullet,t)\colon R_t\to \mathbb{R}$ called the specific entropy $\eta\in C^1(R_t)$ such that 
+
+\[\int_{P_t}\rho(\tenq{y},t)\eta(\tenq{y},t)d\volume_{\tenq{y}} = S(P_t)\cdots\text{total entropy}, P_t\subset R_t\]
+
+A strictly positive scalar field $\theta(\bullet,t)\colon R_t \to R$ ($\theta(\tenq{y},t)>0\phantom{-}\forall \tenq{y}\in R_t \phantom{-}\forall t\in\tau$), $\theta\in C^1(R_t)$ called the absolute temperature field. The following axiom is commonly accepted as a statement of the second law in continuous  mechanics. 
+
+\[\frac{dS(P_t)}{dt}\geq-\int_{\partial P_t}\frac{1}{\theta(\tenq{y},t)}\tenq{q}(\tenq{y},t)\cdot\tenq{n}(\tenq{y},t)dA_{\tenq{y}} + \int_{P_t}\frac{\rho(\tenq{y},t)r(\tenq{y},t)}{\theta(\tenq{y},t)}d\volume_{\tenq{y}}\]
+
+where
+
+\[S(P_t) = \int_{P_t}\rho(\tenq{y},t)\eta(\tenq{y},t)d\volume_{\tenq{y}}\]
+
+\begin{remark}\mbox{}\\
+
+Call the entropy production rate of $P_t$
+
+\[\Gamma(P_t)\equiv\frac{d}{dt}\int_{P_t}\rho\eta d\volume + \int_{\partial P_t}\frac{\tenq{q}\cdot\tenq{n}}{\theta}dA - \int_{P_t}\frac{\rho r}{\theta}d\volume\]
+
+Thus second law (Clausius-Duhem)
+
+\[\Leftrightarrow \Gamma(P_t)\geq 0\phantom{-}P_t\subset R_t\phantom{-}t \in \tau\]
+
+recall that $\frac{d}{dt}\int_{P_t}\rho\eta d\volume = \int_{P_t}\rho\dot{\eta}d\volume$ by RTT
+
+where $\dot{\eta} = \frac{\partial\eta}{\partial t} + \nabla\eta\cdot\bar{\tenq{v}}$
+
+by using the divergence theorem and the above 
+
+\[\Rightarrow \rho\dot{\eta} + \nabla\cdot\left(\frac{\tenq{q}}{\theta}\right) - \frac{\rho r}{\theta}\geq 0\]
+
+\begin{equation}
+\Rightarrow
+\boxed{
+\rho\dot{\eta} + \frac{1}{\theta}\nabla\cdot\tenq{q}-\frac{1}{\theta^2}\tenq{q}\cdot\nabla\theta - \frac{\rho r}{\theta}\geq 0
+}
+\tag{$\ast\ast$}\label{Energetic Axioms-(**)}
+\end{equation}
+
+recall $\eqref{Energetic Axioms-(*)}$ (local version of the first law, $\nabla\cdot\tenq{q} = -\rho\dot{\varepsilon} + \tenq{\tau}\cdot\tenq{D} + \rho r$)
+
+\[\eqref{Energetic Axioms-(*)},\eqref{Energetic Axioms-(**)}\Rightarrow 
+\boxed{
+\rho\theta\dot{\eta} - \rho\dot{\varepsilon} + \tenq{\tau}\cdot\tenq{D} - \frac{1}{\theta}\tenq{q}\cdot\nabla\theta\geq 0
+}
+\]
+\[\cdots\text{reduced dissipation inequality}\]
+
+
+\end{remark}
+
+\begin{theorem}{(Dissipation Inequalities)}{(Local)}
+
+The Clausius-Duhem inequality is equivalent to 
+
+\begin{enumerate}[label=(\roman*)]
+
+\item
+local entropy production inequality
+
+\begin{equation}
+\rho\dot{\eta} + \nabla\cdot\left(\frac{1}{\theta}\tenq{q}\right) - \frac{\rho r}{\theta}\geq 0
+\tag{i}\label{Energetic Axioms-(i)}
+\end{equation}
+
+\item
+reduced dissipation inequality (the first law $+$ the second law)
+
+\begin{equation}
+\rho\theta\dot{\eta} - \left(\rho\dot{\varepsilon} - \tenq{\tau}\cdot\tenq{D}\right) - \frac{1}{\theta}\tenq{q}\cdot\nabla\theta\geq 0
+\tag{ii}\label{Energetic Axioms-(ii)}
+\end{equation}
+
+\end{enumerate}
+
+\begin{note}
+
+equivalent in classical thermodynamics
+
+\[\theta\dot{\eta}-\left(\dot{\varepsilon}-p\dot{v}\right)\geq 0\]
+(i.e., $\nabla\theta = 0$, homogeneous assumption)
+\end{note}
+
+\end{theorem}
+
+\begin{remark}\mbox{}\\
+
+\begin{itemize}
+
+\item
+The continuum and classical versions of dissipation inequalities are equivalent as expected.
+
+\item
+The term $\frac{1}{\theta}\tenq{q}\cdot\nabla\theta$ is missed in classical thermodynamics because of the homogeneity assumption. 
+
+
+\end{itemize}
+
+Thermodynamics deal with \emph{equilibrium system} only.
+
+
+\end{remark}
+
+
+\emph{Define} the \emph{internal dissipation} rate $\delta$ as 
+
+\[\delta = \theta\dot{\eta} - \left[\dot{\varepsilon}-\frac{1}{\rho}\tenq{\tau}\cdot\tenq{D}\right]\]
+
+and the \emph{conductive entropy production} density $\xi$ as 
+
+\[\xi = -\frac{1}{\theta}\tenq{q}\cdot\nabla\theta\]
+
+Entropy production
+
+\[\Gamma(P_t) = \int_{P_t}\frac{\rho(\tenq{y},t)\delta(\tenq{y},t) + \xi(\tenq{y},t)}{\theta(\tenq{y},t)}d\volume_{\tenq{y}}\geq 0\]
+
+is the sum of the internally dissipation and heat conduction pants. The inequalities $\delta\geq 0$ and $\xi\geq 0$ are known as the Clausius-Plank and the Fourier Inequality (in heat transfer). We do not view each of them as valid separately in a general process where both mechanical and conductive effects occurs. These inequalities are not implied by the second law. \\[5pt]
+
+
+
+Specific \emph{Helmholtz free energy} $\psi(\bullet,t)\colon R_t\to \mathbb{R}$\\
+
+define
+
+\[\psi(\tenq{y},t) = \varepsilon(\tenq{y},t)-\theta(\tenq{y},t)\eta(\tenq{y},t)\phantom{-}\forall\tenq{y}\in R_t\phantom{-}\forall t\in \tau\]
+
+Take Lagrangian derivative
+
+\begin{equation}
+\dot{\psi} = \dot{\varepsilon} - \dot{\theta}\eta - \theta\dot{\eta}
+\tag{$\star$}\label{Energetic Axioms-(star)}
+\end{equation}
+
+\eqref{Energetic Axioms-(i)}, \eqref{Energetic Axioms-(ii)}, and $\eqref{Energetic Axioms-(star)} \Rightarrow$
+
+\[-\rho\left(\dot{\psi}+\eta\dot{\theta}\right) + \tenq{\tau}\cdot\tenq{D}-\frac{1}{\theta}\tenq{q}\cdot\nabla\theta \geq 0\]
+
+\begin{remark}\mbox{}\\
+
+\begin{figure}[H]
+\centering
+\resizebox{0.2\textwidth}{!}{\input{figure33.eps_tex}}
+\caption{Scheme for $P_t$}
+\label{Scheme for $P_t$}
+\end{figure}
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item
+We say that $P_t$ is thermally isolated if $\tenq{q}\cdot\tenq{n} = 0$ on $\partial P_t$ and $r=0$ on $P_t$ (closed) system.
+
+\[\frac{d}{dt}S(P_t)\geq 0\phantom{---}(\text{in classical thermodynamics, }\dot{\eta}\geq\frac{\tilde{q}}{\theta}=0)\]
+
+i.e., entropy cannot decrease under thermal isolation.
+
+\item
+Special cases
+
+\begin{align*}
+\dot{\varepsilon} = \dot{\eta} = 0
+&&
+\text{or}
+&&
+\dot{\psi} = \dot{\theta} = 0
+&&
+\rightarrow \text{steady state}
+\end{align*}
+
+\[\Rightarrow \tenq{\tau}\cdot\tenq{D} - \frac{1}{\theta}\tenq{q}\cdot\nabla\theta\geq 0\]
+
+\begin{enumerate}[label=case (\roman*)]
+
+\item
+Non-conductive material ($\tenq{q}=\tenq{0}$ or $\theta$ is uniform, $\nabla\theta = 0$)
+
+\[\Rightarrow\tenq{\tau}\cdot\tenq{D}\geq 0\text{ (non-negetive stress-power density)}\]
+
+\item
+For a rest motion $\tenq{D} = \tenq{0}$
+
+\[\Rightarrow -\frac{1}{\theta}\tenq{q}\cdot\nabla\theta\geq 0\Rightarrow\tenq{q}\cdot\nabla\theta\leq 0\cdots \text{Fourier's inequality}\]
+
+
+\end{enumerate}
+
+\item
+If $\tenq{q} = \tenq{0}$ (adiabatic)
+
+\begin{align*}
+\delta
+&= \theta\dot{\eta} - \left(\dot{\varepsilon} - \frac{1}{\rho}\tenq{\tau}\cdot\tenq{D}\right)\geq 0\\
+&= -\left(\dot{\psi} + \eta\dot{\theta}\right)+\frac{1}{\rho}\tenq{\tau}\cdot\tenq{D}\geq 0
+\end{align*}
+
+
+\begin{alignat*}{3}
+& \text{If the process is \emph{isentropic} }(\dot{\eta} = 0)     \quad && \Rightarrow \quad && \frac{1}{\rho}\tenq{\tau}\cdot\tenq{D}\geq\dot{\varepsilon}\\
+& \text{If the process is \emph{isothermal} }(\dot{\theta} = 0)     \quad && \Rightarrow \quad && \frac{1}{\rho}\tenq{\tau}\cdot\tenq{D}\geq\dot{\psi}
+\end{alignat*}
+
+
+
+\end{enumerate}
+
+
+\end{remark}
+
+\section{Thermodynamic process}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.5\textwidth}{!}{\input{figure34.eps_tex}}
+\caption{Scheme for $\tenq{\chi}_t$}
+\label{Scheme for chi}
+\end{figure}
+
+\begin{definition}\mbox{}\\
+
+Let $\tenq{\chi}_t\colon B\to E_3$, $t\in\tau(\tenq{\chi}_t\in\Omega(B))$ be a motion of body $B$ with $R_t = \tenq{\chi}_t(B)$. The ordered array of 8 elements $\left[\tenq{\chi}_t, \tenq{\tau}, \tenq{b}, \varepsilon, \tenq{q}, r, \eta, \theta\right]$ is a thermodynamic process undergone by $B$ during $\tau$ if $\left[\tenq{\chi}_t, \tenq{\tau}, \tenq{b}\right]$ is a dynamical process and $\varepsilon, \tenq{q}, r, \eta, \theta$ satisfy balance of energy and the entropy inequality in which $\rho$ is governed by mass balance.
+
+\end{definition}
+
+\section{Fundamental field equations for a thermodynamic process}
+
+Let $\bar{\tenq{v}}(\bullet,t)\colon R_t\to E_3$ is spatial (Eulerian) velocity field due to the motion and assume that the density $\rho\in C^1(\mathfrak{m})$, $\mathfrak{m} = \left\{(\tenq{y},t)\mid \tenq{y}\in R_t, t\in\tau\right\}$ then $\left[\tenq{\chi}_t, \tenq{\tau}, \tenq{b}, \varepsilon, \tenq{q}, r, \eta, \theta\right]$ is a thermodynamic process \emph{if and only if}:
+
+\begin{enumerate}[label=(\arabic*)]
+\setcounter{enumi}{-1}
+
+\item\label{Fundamental field equations for a thermodynamic process-item-0}
+$\dot{\rho} + \rho\nabla\cdot\bar{\tenq{v}}=0\cdots$(mass balance)
+
+\item\label{Fundamental field equations for a thermodynamic process-item-1}
+$\nabla\cdot\tenq{\tau} + \tenq{b} = \rho\bar{\tenq{a}}\cdots$(linear momentum balance)
+
+\item
+$\tenq{\tau} = \tenq{\tau}^T\cdots$(angular momentum balance)
+
+\item
+$\rho\dot{\varepsilon} = -\nabla\cdot\tenq{q} + \tenq{\tau}\cdot\tenq{D} + \rho r\cdots$(the first law: energy balance)
+
+\item \label{Fundamental field equations for a thermodynamic process-item-4}
+$\rho\dot{\eta} + \nabla\cdot\left(\frac{1}{\theta}\tenq{q}\right) - \frac{\rho r}{\theta}\geq 0\cdots$(the second law: energy inequality)\\
+
+in the above \ref{Fundamental field equations for a thermodynamic process-item-4} is interchangeable with 
+\begin{enumerate}[label=(\roman*)]
+
+\item
+$\rho\theta\dot{\eta} - \rho\dot{\varepsilon} + \tenq{\tau}\cdot\tenq{D} - \frac{1}{\theta}\tenq{q}\cdot\nabla\theta\geq 0$
+
+\item
+$-\rho\left(\dot{\psi} + \eta\dot{\theta}\right) + \tenq{\tau}\cdot\tenq{D}-\frac{1}{\theta}\tenq{q}\cdot\nabla\theta\geq 0$
+
+\end{enumerate}
+\end{enumerate}
+
+where $\bar{\tenq{a}} = \dot{\bar{v}}$, $\tenq{D} = \textit{sym }\nabla\bar{\tenq{v}}$ on $\mathfrak{m}$\\
+
+\ref{Fundamental field equations for a thermodynamic process-item-0}-\ref{Fundamental field equations for a thermodynamic process-item-4} are the fundamental field equations for thermodynamic process. 
+
+
+\begin{remark}\mbox{}\\
+The above are valid for all bodies and admissible motions. Given a \emph{motion} and a \emph{temperature field}, that exists infinitely many choice of $\tenq{\tau}$, $\varepsilon$, $\tenq{q}$, $\eta$, $\tenq{b}$, and $r$ such that \ref{Fundamental field equations for a thermodynamic process-item-1}-\ref{Fundamental field equations for a thermodynamic process-item-4} hold. Moreover for all different types of bodies subjected to the same motion and temperature fields, in general, will undergo different thermodynamic processes. Therefore, the constitutive laws are needed.
+\end{remark}
+
+\begin{note}\mbox{}\\
+We assumed that $\rho$ obeys mass balance. 
+\end{note}

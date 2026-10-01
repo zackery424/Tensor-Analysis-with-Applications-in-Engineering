@@ -1,0 +1,1081 @@
+\chapter{Kinetics of Continuous Media}
+
+Recall the definition of admissible motion
+\begin{figure}[H]
+\centering
+\resizebox{0.8\textwidth}{!}{\input{figure22.eps_tex}}
+\caption{Scheme of deformation}
+\label{Scheme of deformation}
+\end{figure}
+\[\hat{\tenq{y}}(\bullet,t)\colon R\to R_t\]
+\[t\in\tau=[t_0,t_1]\]
+\[\tenq{y}=\hat{\tenq{y}}(\tenq{x},t)=\tenq{x}+\tenq{u}(\tenq{x},t)\]
+\[\hat{\tenq{y}}\in C^2(R\times\tau)\]
+\[J = \det\nabla\hat{\tenq{y}} = \det\left(\tenq{1}+\nabla\tenq{u}\right)>0\]
+\[\hat{\tenq{y}}^{-1}\equiv\hat{\tenq{x}}(\bullet,t)\text{ on }R_t, \hat{\tenq{x}}(\bullet,t)\in C^2(R_t)\]
+
+\section{Mass density, conservation of mass (equation of continuity)}
+
+Assume that exists a scalar valued function $\rho(\bullet,t)$ on $R_t$, $\forall t \in[t_0,t_1]$ called the mass density of the body at time $t$, with the following properties. 
+
+\begin{enumerate}[label=(\roman*)]
+
+\item 
+$\rho(\bullet,t)\in C(R_t)$, $\rho(\tenq{y},t)>0\phantom{-} \forall \tenq{y}\in R_t \phantom{-} \forall t\in [t_0,t_1]$
+\item \label{conservation of mass-item 2}
+If $P\subset R$ is a compact region and if $P_t = \hat{\tenq{y}}(P,t)$, then 
+
+\[m(P_t) = \int_{P_t}\rho(\tenq{y},t)d\volume_{\tenq{y}}\phantom{-} \forall t\in\tau\]
+
+dim $\rho = [ML^{-3}]$
+\begin{figure}[H]
+\centering
+\resizebox{0.6\textwidth}{!}{\input{figure23.eps_tex}}
+\caption{Scheme of deformation of $P$}
+\label{Scheme of deformation of P}
+\end{figure}
+
+\end{enumerate}
+
+\section{Postulate of mass conservation (Global Version)}
+
+
+\begin{equation}
+\boxed{m(P_t) = m(P_{t_0}), t_0\leq t\leq t_1, \forall \text{ compact }P \subset R} \tag{$\ast$} \label{mass conservation-*}
+\end{equation}
+i.e., $m(P_{t_0})$ is time independent. 
+
+\begin{claim}\mbox{}\\
+
+Define
+
+\begin{equation}
+\phi(\tenq{x},t) = \rho(\hat{\tenq{y}}(\tenq{x},t),t)J(\tenq{x},t)\phantom{-} \forall (\tenq{x},t)\in R \times \tau \tag{a} \label{mass conservation-a}
+\end{equation}
+
+Then from $\eqref{mass conservation-*}$
+
+\begin{equation}
+\phi(\tenq{x},t) = \phi(\tenq{x},t_0)\equiv\footnotemark\rho_0(\tenq{x})\phantom{-}\forall (\tenq{x},t)\in R \times \tau \tag{b} \label{mass conservation-b}
+\end{equation}
+\footnotetext{no longer depend on time}
+Also
+
+\begin{equation}
+m(P_t) = \int_P \rho_0(\tenq{x})d\volume_{\tenq{x}}\tag{c} \label{mass conservation-c}
+\end{equation}
+
+Finally
+
+\begin{equation}
+\rho(\tenq{y}\footnotemark,t)J(\tenq{x},t) = \rho_0(\tenq{x})\phantom{-}\forall (\tenq{x},t)\in R \times \tau \tag{d} \label{mass conservation-d}
+\end{equation}
+\footnotetext{$\tenq{y} = \hat{\tenq{y}}(\tenq{x},t)$}
+ 
+\end{claim}
+
+\begin{proof}\mbox{}\\
+
+\begin{equation}\tag{1}\label{mass conservation-1}
+\begin{split}
+\text{\ref{conservation of mass-item 2}} \Rightarrow 
+m(P_t)
+&=\int_P \rho(\hat{\tenq{y}}(\tenq{x},t),t)J(\tenq{x},t)d\volume_{\tenq{x}}\\
+&\vc{=}{\eqref{mass conservation-a}}{}\int_P \phi(\tenq{x},t)d\volume_{\tenq{x}}
+\end{split}
+\end{equation}
+
+\begin{align*}
+\eqref{mass conservation-1}\&\eqref{mass conservation-*}
+&\Rightarrow m(P_t) - m(P_{t_0}) = \int_P \left\{\phi(\tenq{x},t)-\phi(\tenq{x},t_0)\right\}d\volume_{\tenq{x}} = 0\\
+&\Rightarrow \phi(\tenq{x},t) = \phi(\tenq{x},t_0)\equiv\rho_0(\tenq{x})
+\end{align*}
+
+From \ref{conservation of mass-item 2}
+\[m(P_t) = \int_{P_t}\rho(\tenq{y},t)d\volume_{\tenq{y}} = \int_P \phi(\tenq{x},t)d\volume_{\tenq{x}} = \int_P \rho_0(\tenq{x})d\volume_{\tenq{x}}\]
+
+\[
+\Rightarrow
+\boxed{
+\begin{aligned}
+& \rho(\tenq{y},t)J(\tenq{x},t)=\rho_0(\tenq{x})\\
+ \text{ or }&\rho(\hat{\tenq{y}}(\tenq{x},t),t)J(\tenq{x},t)=\rho_0(\tenq{x})
+\end{aligned}
+}\tag{$\ast\ast$} \label{mass conservation-**}
+\]
+
+$\eqref{mass conservation-**}\cdots$ Local version of conservation of mass\\
+$\rho_0(\tenq{x})\cdots$ \emph{nominal} or \emph{referential} mass density
+
+
+\end{proof}
+
+\begin{remark}\mbox{}\\
+
+\begin{enumerate}[label=(\arabic*)]
+\item incompressible body ($J(\tenq{x},t)=1$)\\
+(can only sustain locally volume preserving deformation)
+\[\Rightarrow\rho(\tenq{y},t) = \rho_0(\tenq{x})\]
+\item infinitesimal deformation $\abs{\nabla\tenq{u}}\ll 1$, $\tenq{E}\sim \tenq{\varepsilon} = \frac{1}{2}\left(\nabla \tenq{u} + \left(\nabla \tenq{u}\right)^T\right)$
+
+\[\Rightarrow J = \det\left(\tenq{1} + \nabla \tenq{u}\right)\approx 1 + \tr\tenq{\varepsilon} = 1+\cancelto{\text{neglected}}{u_{k,k}}\]
+\[\Rightarrow\rho(\tenq{y},t) = \rho_0(\tenq{x})\]
+\end{enumerate}
+\end{remark}
+
+\section{Velocity and acceleration fields}
+
+The material (Lagrangian, referential) velocity and acceleration defined as 
+
+\begin{figure}[H]
+\centering
+\resizebox{0.8\textwidth}{!}{\input{figure24.eps_tex}}
+
+\caption{the motion of a body}
+\label{Motion of a body-1}
+\end{figure}
+
+\[\dot{\tenq{y}}(\tenq{x},t) = \frac{\partial}{\partial t}\hat{\tenq{y}}(\tenq{x},t) = \tenq{v}(\tenq{x},t)\]
+\[\ddot{\tenq{y}}(\tenq{x},t) = \frac{\partial^2}{\partial t^2}\hat{\tenq{y}}(\tenq{x},t) = \tenq{a}(\tenq{x},t)\]
+
+where $\tenq{v}(\tenq{x},t)=\dot{\tenq{y}}(\tenq{x},t)\cdots$ velocity at time $t$ of a particle with reference position $\tenq{x}\in R$. \\
+Then the spatial (Eulerian) velocity or acceleration as 
+\[
+\left.
+\begin{aligned}
+ \tenq{q}(\tenq{y},t) = &\bar{\tenq{v}}(\tenq{y},t) ={\left.{ \dot{\tenq{y}}(\tenq{x},t)}\right|_{\tenq{x}=\hat{\tenq{x}}(\tenq{y},t)}}\\
+ &\bar{\tenq{a}}(\tenq{y},t) ={\left.{ \ddot{\tenq{y}}(\tenq{x},t)}\right|_{\tenq{x}=\hat{\tenq{x}}(\tenq{y},t)}}
+\end{aligned}\right\}\Rightarrow
+\left.
+\begin{aligned}
+& \bar{\tenq{v}}(\hat{\tenq{y}}(\tenq{x},t),t) = \dot{\tenq{y}}(\tenq{x},t)\\
+& \bar{\tenq{a}}(\hat{\tenq{y}}(\tenq{x},t),t) = \ddot{\tenq{y}}(\tenq{x},t)
+\end{aligned}\right.
+\]
+
+\paragraph{Caution}\mbox{}\\
+
+In general 
+\[\frac{\partial}{\partial t}\bar{\tenq{v}}(\tenq{y},t)\neq\tenq{a}(\tenq{y},t)\]
+However
+\[{\left.{\frac{\partial}{\partial t}\left\{\bar{\tenq{v}}(\hat{\tenq{y}}(\tenq{x},t),t)\right\}}\right|_{\tenq{x}=\hat{\tenq{x}}(\tenq{y},t)}} = \bar{\tenq{a}}(\tenq{y},t)\]
+This motivates the notion of material time derivative. 
+
+\section{Material time derivative}
+
+Consider a motion $\hat{\tenq{y}}\colon R \to R_t, t\in\tau$. Let $\psi(\tenq{y},t)$ be a spatial field and assume $\Psi(\tenq{x},t)$ is the corresponding referential (material) field, i.e. $\Psi(\tenq{x},t) = \psi(\hat{\tenq{y}}(\tenq{x},t),t)$. Then the material time derivative of $\psi$ is an other spatial field $\dot{\psi}(\tenq{y},t)$ such that
+\begin{align*}
+\dot{\psi}\footnotemark(\tenq{y},t) 
+&= \left.{\left[\frac{\partial}{\partial t}\Psi(\tenq{x},t)\right]}\right|_{\tenq{x}=\hat{\tenq{x}}(\tenq{y},t)}\\
+&= \left.{\left[\frac{\partial}{\partial t}\psi(\hat{\tenq{y}}(\tenq{x},t),t)\right]}\right|_{\tenq{x}=\hat{\tenq{x}}(\tenq{y},t)}
+\end{align*}
+\footnotetext{familiar notation $\frac{D\psi}{Dt}$}
+\begin{notation}\mbox{}\\
+\begin{enumerate}[label=(\arabic*)]
+\item 
+$\frac{\partial}{\partial t}\psi(\tenq{y},t)\neq\dot{\psi}(\tenq{y},t)$
+\item 
+$\dot{\Psi}(\tenq{x},t) = \frac{\partial}{\partial t}\Psi(\tenq{x},t)$
+\end{enumerate}
+\end{notation}
+
+\begin{lemma}\mbox{}\\ \label{material derivative lemma-1}
+
+Let $\phi(\tenq{y},t)$ and $\tenq{g}(\tenq{y},t)$ be two spatial fields (scalar, vector). \\
+Then 
+
+\[\frac{D\phi}{Dt} = \dot{\phi}(\tenq{y},t) = \frac{\partial}{\partial t}\phi(\tenq{y},t) + \nabla\phi(\tenq{y},t)\cdot\bar{\tenq{v}}(\tenq{y},t)\]
+Similarly
+\[\frac{D\tenq{g}}{Dt} = \dot{\tenq{g}}(\tenq{y},t) = \frac{\partial}{\partial t}\tenq{g}(\tenq{y},t) + \nabla\tenq{g}(\tenq{y},t)\bar{\tenq{v}}(\tenq{y},t)\]
+
+\end{lemma}
+
+\begin{proof}\mbox{}\\
+
+Let $\Phi(\tenq{x},t) = \phi(\hat{\tenq{y}}(\tenq{x},t),t)$\\
+Then 
+\begin{align*}
+\frac{\partial}{\partial t}\Phi(\tenq{x},t)
+&= \left[\frac{\partial}{\partial t}\phi(\hat{\tenq{y}}(\tenq{x},t),\tau)\right]_{\tau=t} + \left[\frac{\partial}{\partial t}\phi(\hat{\tenq{y}}(\tenq{x},\tau),t)\right]_{\tau=t}\\
+&= \left[\frac{\partial}{\partial t}\phi(\hat{\tenq{y}}(\tenq{x},\tau),t)\right]_{\tau=t} + \left.{\nabla \phi(\tenq{y},t)}\right|_{\tenq{y} = \hat{\tenq{y}}(\tenq{x},t)}\cdot\frac{\partial\hat{\tenq{y}}}{\partial t}
+\end{align*}
+
+\[\frac{\partial}{\partial t}\Phi(\tenq{x},t) = \frac{\partial}{\partial t}\phi(\tenq{y},t) + \nabla\phi(\tenq{y},t)\cdot\bar{\tenq{v}}(\tenq{y},t)\]
+
+Let $\tenq{x}=\hat{\tenq{x}}(\tenq{y},t)$
+
+\[\dot{\phi}(\tenq{y},t) = \frac{\partial}{\partial t}\phi(\tenq{y},t) + \nabla\phi(\tenq{y},t)\cdot\bar{\tenq{v}}(\tenq{y},t)\]
+
+
+\begin{align*}
+\frac{\partial}{\partial t}\left[g_i(\hat{\tenq{y}}(\tenq{x},t),t)\right]
+&= \frac{\partial g_i}{\partial y_j}\frac{\partial y_j(\tenq{x},t)}{\partial t} + \frac{\partial g_i}{\partial t}\\
+&= \left(\nabla \tenq{g}\right)_{ij}v_j + \frac{\partial g_i}{\partial t}
+\end{align*}
+
+\[\therefore \dot{\tenq{g}}(\hat{\tenq{y}}(\tenq{x},t),t) = \left(\nabla\tenq{g}\right)\bar{\tenq{v}} + \frac{\partial\tenq{g}(\hat{\tenq{y}}(\tenq{x},t),t)}{\partial t}\]
+
+\end{proof}
+
+\begin{lemma}\mbox{}\\
+
+Let $\tenq{\tau}\in C^1[t_0,t_1]$ be a function whose values are \emph{non-singular} second order tensors. Then
+
+
+\begin{equation}\tag{$\bigstar$} \label{material derivative -star}
+\begin{split}
+\frac{d}{dt}\det\tenq{\tau}(t)
+&= \det\tenq{\tau}(t)\left\{\dot{\tenq{\tau}}(t)\cdot\tenq{\tau}^{-T}(t)\right\}\\
+&= \det\tenq{\tau}(t)\dot{\tau}_{ij}\tau_{ji}^{-1}(t)\phantom{-}(t_0\leq t\leq t_1)
+\end{split}
+\end{equation}
+
+
+\end{lemma}
+
+\begin{proof}\mbox{}\\
+
+Recall 
+
+\[\det\tenq{\tau}(t) = \frac{1}{6}\epsilon_{ijk}\epsilon_{pqr}\tau_{ip}(t)\tau_{jq}(t)\tau_{kr}(t)\]
+
+\begin{equation}\tag{1}\label{material derivative-1}
+\begin{split}
+\therefore \frac{d}{dt}\left\{\det\tenq{\tau}(t)\right\} 
+&= \frac{1}{6}\epsilon_{ijk}\epsilon_{pqr}\left\{\dot{\tau}_{ip}(t)\tau_{jq}(t)\tau_{kr}(t)\right. \\
+ &+ \left.\tau_{ip}(t)\dot{\tau}_{jq}(t)\tau_{kr}(t) + \tau_{ip}(t)\tau_{jq}(t)\dot{\tau}_{kr}(t)\right\}
+\end{split}
+\end{equation}
+
+
+
+Recall also that
+
+\begin{equation}\tag{2}\label{material derivative-2}
+\boxed{\left(\tenq{\tau}^{-1}\right)_{ij}\equiv\tau_{ij}^{-1} = \frac{1}{2det\tenq{\tau}}\epsilon_{ipq}\epsilon_{jrs}\tau_{rp}\tau_{sq}}
+\end{equation}
+
+From \eqref{material derivative-1} and \eqref{material derivative-2}, we obtain 
+
+\begin{align*}
+\frac{d}{dt}\left\{\det\tenq{\tau}(t)\right\} 
+&= \frac{1}{6}
+\left\{
+2\det\tenq{\tau}\dot{\tau}_{ip}\tau_{pi}^{-1} +
+2\det\tenq{\tau}\dot{\tau}_{jq}\tau_{qj}^{-1}
+\right. \\
+&+ \left. 2\det\tenq{\tau}\dot{\tau}_{kr}\tau_{rk}^{-1}
+\right\}
+\end{align*}
+or 
+
+\[\frac{d}{dt}\left\{\det\tenq{\tau}(t)\right\} = \det\tenq{\tau}(t)\dot{\tau}_{ij}(t)\tau_{ji}^{-1}(t)\]
+
+
+\end{proof}
+
+
+
+\begin{claim}\mbox{}\\
+
+Let $\hat{\tenq{y}}(\bullet,t)\colon R\to R_t$, one has the identity
+
+\begin{equation}
+\boxed{\dot{J}(\tenq{x},t) = J(\tenq{x},t)\nabla_{\tenq{y}}\cdot \tenq{q}(\tenq{y},t), \bar{\tenq{v}} = \tenq{q}(\tenq{y},t)} \tag{$\mathsection$} \label{material derivative-mathsection}
+\end{equation}
+
+\end{claim}
+
+\begin{proof}\mbox{}\\
+
+Let $\tenq{T}(t) = \nabla \hat{\tenq{y}}(\tenq{x},t)$, $\det \tenq{T} = \det\nabla \hat{\tenq{y}}(\tenq{x},t) = J(\tenq{x},t)$
+
+\[\frac{d}{dt}\left\{\det\nabla \hat{\tenq{y}}(\tenq{x},t)\right\} = \dot{J}(\tenq{x},t)\vc{=}{\eqref{material derivative -star}}{\footnotemark} J(\tenq{x},t)\dot{\hat{y}}_{i,j}(\tenq{x},t)\hat{x}_{j,i}(\tenq{y},t)\]
+
+\footnotetext{$\frac{d}{dt},\frac{\partial}{\partial x_i}$ interchangeable}
+
+recall $\nabla\hat{\tenq{x}}(\tenq{y},t) = \left[\nabla \hat{\tenq{y}}(\tenq{x},t)\right]^{-1}$
+
+\begin{align*}
+\dot{J}(\tenq{x},t)
+&\vc{=}{\footnotemark}{} J(\tenq{x},t)\frac{\partial}{\partial x_j}v_i(\tenq{x},t)\frac{\partial \hat{x}_j(\tenq{y},t)}{\partial y_i}\\
+&\vc{=}{\footnotemark}{}J(\tenq{x},t)\frac{\partial}{\partial y_i}\bar{v}_i(\tenq{y},t)\\
+&= J(\tenq{x},t)q_{i,i}\\
+&= J(\tenq{x},t)\nabla_{\tenq{y}}\cdot\tenq{q}(\tenq{y},t)
+\end{align*}
+
+\footnotetext{$\frac{\partial \hat{\tenq{y}}}{\partial t} = \tenq{v}$ the Lagrangian velocity}
+\footnotetext{Chain rule and $\tenq{q}(\tenq{y},t) = \bar{\tenq{v}}(\tenq{y},t) = \tenq{v}(\tenq{x}(\tenq{y},t),t)$}
+
+
+\end{proof}
+
+\begin{claim}\mbox{}\\
+
+For any admissible motion mass balance (local) implies
+
+\[\frac{\partial}{\partial t}\rho(\tenq{y},t) + \nabla\rho(\tenq{y},t)\cdot\bar{\tenq{v}}(\tenq{y},t) + \rho(\tenq{y},t)\nabla\cdot\bar{\tenq{v}}(\tenq{y},t) = 0\]
+
+or 
+
+\[\frac{\partial}{\partial t}\rho(\tenq{y},t) + \nabla \cdot\left[\rho(\tenq{y},t)\bar{\tenq{v}}(\tenq{y},t)\right] = 0\]
+
+
+
+\end{claim}
+
+\begin{proof}\mbox{}\\
+
+Recall $\eqref{mass conservation-**}$ and $\eqref{material derivative-mathsection}$
+\[\rho(\tenq{y},t)J(\tenq{x},t)=\rho_0(\tenq{x})\]
+\[\dot{J}(\tenq{x},t) = J(\tenq{x},t)\nabla_{\tenq{y}}\cdot \bar{\tenq{v}}(\tenq{y},t)\]
+Differentiate with respect to $t$ ($x$ fixed)
+
+\begin{align*}
+&\rightarrow
+\left[\frac{\partial}{\partial t}\rho(\hat{\tenq{y}}(\tenq{x},t),t)\right]J(\tenq{x},t) + \rho(\hat{\tenq{y}}(\tenq{x},t),t)\frac{\partial}{\partial t}J(\tenq{x},t) = 0\\
+&\rightarrow
+\dot{\rho}(\tenq{y},t)J(\tenq{x},t) + \rho(\tenq{y},t)J(\tenq{x},t)\nabla\cdot\bar{\tenq{v}}(\tenq{y},t) = 0\\
+&\rightarrow
+\dot{\rho}(\tenq{y},t) + \rho(\tenq{y},t)\nabla\cdot\bar{\tenq{v}}(\tenq{y},t) = 0\\
+&\vc{\rightarrow}{Lemma}{\ref{material derivative lemma-1}}
+\frac{\partial}{\partial t}\rho(\tenq{y},t) + \nabla\rho(\tenq{y},t)\cdot\bar{\tenq{v}}(\tenq{y},t) + \rho(\tenq{y},t)\nabla\cdot\bar{\tenq{v}}(\tenq{y},t) = 0\\
+&\rightarrow
+\frac{\partial}{\partial t}\rho(\tenq{y},t) + \nabla \cdot\left[\rho(\tenq{y},t)\bar{\tenq{v}}(\tenq{y},t)\right] = 0
+\end{align*}
+
+
+
+\end{proof}
+
+\section{For locally volume preserving (isochoric motion)}
+
+\[J(\tenq{x},t)=1\]
+\begin{align*}
+&\Rightarrow \dot{J}(\tenq{x},t)=0 \vc{=}{\eqref{material derivative-mathsection}}{}J(\tenq{x},t)\nabla\cdot\bar{\tenq{v}}(\tenq{y},t) = 0\\
+&\Rightarrow\nabla\cdot\bar{\tenq{v}} = 0\\
+&\Rightarrow \dot{\rho} (\tenq{y},t) = 0
+\end{align*}
+or 
+\[\frac{\partial}{\partial t}\rho(\tenq{y},t) + \nabla\rho(\tenq{y},t)\cdot\bar{\tenq{v}}(\tenq{y},t)= 0\]
+
+\section{Spatial velocity gradient tensor}
+
+Let $\bar{\tenq{v}}(\tenq{y},t)$ be the spatial or Eulerian velocity field. Define a tensor field $\tenq{L}(\bullet,t)\colon R_t \in \mathscr{L}$\footnote{$\mathscr{L}$ is set of all $2^{nd}$ order tensor} by 
+
+\[\tenq{L}(\tenq{y},t) = \nabla_{\tenq{y}}\bar{\tenq{v}}(\tenq{y},t)\phantom{-}\forall\tenq{y}\in R_t\phantom{-}\forall t\in \tau\]
+called the spatial velocity gradient tensor. 
+
+Recall 
+
+\begin{align*}
+\tenq{F}(\tenq{x},t) 
+&= \nabla_{\tenq{x}}\hat{\tenq{y}}(\tenq{x},t)\\
+\Rightarrow \dot{\tenq{F}}(\tenq{x},t) 
+&= \vc{\left[\nabla_{\tenq{x}}\hat{\tenq{y}}(\tenq{x},t)\right]}{\bullet}{} = \nabla_{\tenq{x}}\dot{\hat{\tenq{y}}}(\tenq{x},t)
+\end{align*}
+However recall 
+
+\begin{align*}
+\dot{\hat{\tenq{y}}}(\tenq{x},t) 
+&= \bar{\tenq{v}}(\hat{\tenq{y}}(\tenq{x},t),t)\\
+\Rightarrow \nabla_{\tenq{x}}\dot{\hat{\tenq{y}}}(\tenq{x},t)
+&= \left.\nabla_{\tenq{y}}\bar{\tenq{v}}(\tenq{y},t)\right|_{\tenq{y} = \hat{\tenq{y}}(\tenq{x},t)}\nabla_{\tenq{x}}\hat{\tenq{y}}(\tenq{x},t)
+\end{align*}
+
+\[\therefore\boxed{\dot{\tenq{F}}(\tenq{x},t) = \tenq{L}(\hat{\tenq{y}}(\tenq{x},t),t)\tenq{F}(\tenq{x},t)}\]
+
+\begin{definition}\mbox{}\\
+
+The stretching and spin tensor fields as 
+
+\begin{align*}
+\tenq{D}(\tenq{y},t)
+&= \textit{sym } \tenq{L}(\tenq{y},t) = \frac{1}{2}\left[\nabla \bar{\tenq{v}}(\tenq{y},t) + \left(\nabla\bar{\tenq{v}}(\tenq{y},t)\right)^T\right]\\
+\tenq{W}(\tenq{y},t)
+&= \textit{skew } \tenq{L}(\tenq{y},t) = \frac{1}{2}\left[\nabla \bar{\tenq{v}}(\tenq{y},t) - \left(\nabla\bar{\tenq{v}}(\tenq{y},t)\right)^T\right]
+\end{align*}
+
+so that $\tenq{L} = \tenq{W} + \tenq{D}$, $\tenq{D} = \tenq{D}^T$, $\tenq{W} = -\tenq{W}^T$
+
+\end{definition}
+
+
+\begin{note}\mbox{}\\
+
+Recall $\tenq{F} = \tenq{Q}\tenq{U} = \tenq{V}\tenq{U}$ ($F$, $Q$, $U$, and $V$ are all functions of time) and for infinitesimal deformation we have
+
+\begin{align*}
+\tenq{L} &\sim \dot{\tenq{F}}\\
+\tenq{D} &\sim \dot{\tenq{U}}\\
+\tenq{W} &\sim \dot{\tenq{Q}}\\
+\end{align*}
+
+\end{note}
+
+Consider two particles $P$ and $Q$ with material position $\tenq{x}$ and $\tenq{x}+d\tenq{x}$. At time $t$ they are to be found at $\tenq{y}(\tenq{x},t)$ and $\tenq{y}(\tenq{x}+d\tenq{x},t)$
+
+\begin{figure}[H]
+\centering
+\resizebox{0.7\textwidth}{!}{\input{figure25.eps_tex}}
+\caption{Scheme of deformation of $P$ and $Q$}
+\label{Scheme of deformation of P and Q}
+\end{figure}
+
+\[\tenq{y}(\tenq{x}+d\tenq{x},t) = \tenq{y}(\tenq{x},t) + \nabla_{\tenq{x}}\tenq{y}(\tenq{x},t)d\tenq{x} + \text{ higer order term (H.O.T.)}\]
+
+\[\therefore d\tenq{y} = \underbrace{\nabla_{\tenq{x}}\tenq{y}}_{\tenq{F}}d\tenq{x} \text{ or }dy_i = \frac{\partial y_i}{\partial x_j}dx_j\]
+
+Velocity of $P$\\
+
+\[\tenq{v} = \dot{\tenq{y}}(\tenq{x},t)\]
+Relative velocity of $P'$ and $Q'$
+
+\begin{align*}
+d\tenq{v} = \vc{\left(d\tenq{y}\right)}{\bullet}{} 
+&= \vc{\left(\nabla_{\tenq{x}}\tenq{y}\right)}{\bullet}{}d\tenq{x}\\
+&= \nabla_{\tenq{x}}\tenq{v}(\tenq{x},t)d\tenq{x}\\
+&= \frac{\partial v_i(\tenq{x},t)}{\partial x_j}dx_j\tenq{e}_i\\
+&= \frac{\partial \bar{v}_i(\hat{\tenq{y}}(\tenq{x},t),t)}{\partial y_m}\underbrace{\frac{\partial y_m(\tenq{x},t)}{\partial x_j}dx_j}_{dy_m}\tenq{e}_i\\
+&= \underbrace{\left(\nabla_{\tenq{y}}\bar{\tenq{v}}\right)}_{\text{velocity}\atop \text{gradient tensor}}d\tenq{y}
+\end{align*}
+
+where relative velocity in terms of \emph{current} relative position. 
+\begin{equation}
+\Rightarrow dv_i = \frac{\partial v_i}{\partial x_j}dx_j = \frac{\partial \bar{v}_i}{\partial y_j}dy_j \tag{$\blacktriangle$} \label{Spatial velocity gradient tensor-triangle}
+\end{equation}
+
+
+The stretching (or rate of strain) and spin tensors are defined as 
+
+\begin{align*}
+\tenq{D}
+&\vc{=}{\Delta}{}\textit{sym } \nabla_{\tenq{y}}\bar{\tenq{v}} = \frac{1}{2}\left[\nabla\bar{\tenq{v}} + \left(\nabla\bar{\tenq{v}}\right)^T\right]\\
+\tenq{W}
+&\vc{=}{\Delta}{}\textit{skew } \nabla_{\tenq{y}}\bar{\tenq{v}} = \frac{1}{2}\left[\nabla\bar{\tenq{v}} - \left(\nabla\bar{\tenq{v}}\right)^T\right]
+\end{align*}
+
+\begin{note}
+
+Recall that exists a vector $\tenq{\omega}$ such that
+
+\[\omega_i = -\frac{1}{2}\epsilon_{ijk}W_{jk}\]
+
+\end{note}
+
+
+\section{Physical interpretation of \texorpdfstring{$D_{ij}$}{Lg}}
+
+Let the length of the line segment $P'Q'$ is $ds$, then 
+
+\[ds^2 = dy_idy_i = \frac{\partial y_i}{\partial x_j}\frac{\partial y_i}{\partial x_k}dx_jdx_k\]
+
+\begin{align*}
+\vc{\left(ds^2\right)}{\bullet}{}
+&= \left(\frac{\partial \dot{y}_i}{\partial x_j}\frac{\partial y_i}{\partial x_k} + \frac{\partial y_i}{\partial x_j}\frac{\partial \dot{y}_i}{\partial x_k}\right)dx_jdx_k\\
+&= \left(\frac{\partial v_i}{\partial x_j}\frac{\partial y_i}{\partial x_k} + \frac{\partial v_i}{\partial x_k}\frac{\partial y_i}{\partial x_j}\right)dx_jdx_k\\
+&\vc{=}{\eqref{Spatial velocity gradient tensor-triangle}}{}\frac{\partial \bar{v}_i}{\partial y_j}dy_jdy_i + \frac{\partial \bar{v}_i}{\partial y_k}dy_kdy_i\\
+&= 2\frac{\partial \bar{v}_i}{\partial y_j}dy_idy_j\\
+&= 2\left(D_{ij} + W_{ij}\right)dy_idy_j = \footnotemark 2D_{ij}dy_idy_j
+\end{align*}
+
+\footnotetext{$W_{ij} = -W_{ji}$}
+
+\[\therefore 2ds\vc{\left(ds\right)}{\bullet}{} = 2D_{ij}dy_idy_j\]
+
+or 
+
+\begin{equation}
+\frac{1}{ds}\vc{\left(ds\right)}{\bullet}{}  = D_{ij}\frac{dy_i}{ds}\frac{dy_j}{ds} \cdot \text{rate of stretching} \tag{$\ast$} \label{Physical interpretation of D_ij-*}
+\end{equation}
+
+Let $\frac{d\tenq{y}}{ds} = \tenq{e}_1$, then $D_{11}$ represents the rate of strain of a fluid element parallel to $\tenq{e}_1$ axis. Similar to $D_{22}$ and $D_{33}$. 
+
+\begin{note}\mbox{}\\
+
+\[D_{11} + D_{22} + D_{33} = \text{rate of volume dilatation}\]
+
+Again consider two segment $PQ$ and $PR$, $R$ is the particle with material position $\tenq{x}+d\tenq{x}'$
+
+\begin{figure}[H]
+\centering
+\resizebox{0.7\textwidth}{!}{\input{figure26.eps_tex}}
+\caption{Scheme of change of two segment}
+\label{Scheme of change of two segment}
+\end{figure}
+
+\[dsds'\cos\theta = dy_idy_i'\]
+
+Take material time derivative 
+
+\begin{align*}
+\vc{\left(dsds'\cos\theta\right)}{\bullet}{} 
+&= dv_idy_i' + dv_i'dy_i\\
+&\vc{=}{\eqref{Spatial velocity gradient tensor-triangle}}{} \frac{\partial \bar{v}_i}{\partial y_j}dy_jdy_i' + \underbrace{\frac{\partial \bar{v}_i}{\partial y_j}dy_j'dy_i}_{i\leftrightarrow j}
+\end{align*}
+
+\begin{align*}
+&\Rightarrow
+\cos\theta \left[\vc{\left(ds\right)}{\bullet}{}ds' + ds\vc{\left(ds'\right)}{\bullet}{}\right] - \vc{\left(\theta\right)}{\bullet}{}\sin\theta dsds' = \left(\frac{\partial \bar{v}_i}{\partial y_j} + \frac{\partial \bar{v}_j}{\partial y_i}\right)dy_i'dy_j\\
+&\Rightarrow
+\cos\theta\left[\frac{1}{ds}\vc{\left(ds\right)}{\bullet}{} + \frac{1}{ds'}\vc{\left(ds'\right)}{\bullet}{}\right]-\dot{\theta}\sin\theta = 2D_{ij}\frac{dy_i'}{ds'}\frac{dy_j}{ds}
+\end{align*}
+
+Let $\frac{d\tenq{y}'}{ds'} = \tenq{e}_1$, $\frac{d\tenq{y}}{ds} = \tenq{e}_2$\\
+then $\theta = \frac{\pi}{2}$
+
+\[\therefore -\dot{\theta} = 2D_{12}\]
+
+$D_{12}$ is one-half the rate of decrease of the angle between two segments originally parallel to $\tenq{e}_1$ and $\tenq{e}_2$ respectively. 
+
+\end{note}
+
+
+\section{Conservation of mass for a control volume}
+
+If $D$ is a control volume independent of time, then 
+
+\[\frac{d}{dt}\int_D \rho(\tenq{y},t)d\volume_{\tenq{y}} + \int_{\partial D} \rho(\tenq{y},t) \bar{\tenq{v}}(\tenq{y},t)\cdot\tenq{n}(\tenq{y},t)dA_{\tenq{y}} = 0\]
+
+\begin{figure}[H]
+\centering
+\resizebox{0.5\textwidth}{!}{\input{figure27.eps_tex}}
+\caption{Scheme of control volume}
+\label{Scheme of control volume}
+\end{figure}
+
+\begin{proof}\mbox{}\\
+
+Recall $D$ is time independent 
+
+\[\int_D \frac{\partial}{\partial t}\rho(\tenq{y},t)d\volume_{\tenq{y}} = \frac{d}{dt}\int_D \rho(\tenq{y},t)d\volume_{\tenq{y}}\]
+
+also 
+
+\[\int_D \nabla\cdot\left[\rho\bar{\tenq{v}}\right]d\volume_{\tenq{y}} = \int_{\partial D}\rho\bar{\tenq{v}}\cdot\tenq{n}dA_{\tenq{y}}\phantom{-}\text{(Divergence theorem)}\]
+
+so 
+
+\[\int_D\left\{\frac{\partial}{\partial t}\rho(\tenq{y},t) + \nabla \cdot \left[\rho(\tenq{y},t)\bar{\tenq{v}}(\tenq{y},t)\right]\right\}d\volume_{\tenq{y}} = 0\]
+
+\end{proof}
+
+\section{Reynolds transport theorem (RTT)}
+Let $P\in R$, $P_t \in R_t$, $P_t = \hat{\tenq{y}}(P,t)$\\
+and define 
+
+\[\phi(t) = \int_{P_t}\rho(\tenq{y},t)\psi(\tenq{y},t)d\volume_{\tenq{y}}\]
+Then 
+
+\[\frac{d}{dt}\phi(t) = \int_{P_t}\rho(\tenq{y},t)\dot{\psi}(\tenq{y},t)d\volume_{\tenq{y}}\]
+or 
+
+\[\frac{d\phi}{dt} = \int_{P_t}\rho\left[\frac{\partial\psi}{\partial t} + \nabla \psi\cdot\bar{\tenq{v}}\right]d\volume_{\tenq{y}}\]
+
+\begin{proof}\mbox{}\\
+
+\begin{align*}
+\phi(t) 
+&= \int_P \rho(\hat{\tenq{y}}(\tenq{x},t),t)\psi(\hat{\tenq{y}}(\tenq{x},t),t)J(\tenq{x},t)d\volume_{\tenq{x}}\\
+&\vc{=}{\eqref{mass conservation-**}}{}\int_P\rho_0(\tenq{x})\psi(\hat{\tenq{y}}(\tenq{x},t),t)d\volume_{\tenq{x}}\\
+\end{align*}
+
+\begin{align*}
+\frac{d\phi}{dt} 
+&= \int_P\rho_0(\tenq{x})\frac{\partial}{\partial t}\psi(\hat{\tenq{y}}(\tenq{x},t),t)d\volume_{\tenq{x}}\\
+&= \int_P\left.\left[\rho(\tenq{y},t)\dot{\psi}(\tenq{y},t)\right]\right|_{\tenq{y} = \hat{\tenq{y}}(\tenq{x},t)}J(\tenq{x},t)d\volume_{\tenq{x}}\\
+\end{align*}
+
+\[\therefore \frac{d\phi}{dt} = \int_{P_t}\rho(\tenq{y},t)\dot{\psi}(\tenq{y},t)d\volume_{\tenq{y}}\]
+
+\end{proof}
+
+If $\Psi(\tenq{x},t) = \psi(\hat{\tenq{y}}(\tenq{x},t),t)$ then 
+
+\[\frac{d\phi}{dt} = \int_P\rho_0(\tenq{x})\frac{\partial}{\partial t}\Psi(\tenq{x},t)d\volume_{\tenq{x}}\]
+
+\section{Body forces, contact forces, surface tractions}
+
+Let $\hat{\tenq{y}}(\bullet,t)\colon R \to R_t$. Let $P\subset R, P_t = \hat{\tenq{y}}(P,t)$. \\
+
+Admissible forces:
+
+\begin{enumerate}[label=(\alph*)]
+
+\item
+body forces (extrinsic, assigned), e.g. gravity, magnetic field. 
+
+\item contact forces. (contact of material in $P_t$ with surrounding material)
+
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{\input{figure28.eps_tex}}
+\caption{Scheme of deformation of $P$}
+\label{Scheme of deformation of P_1}
+\end{figure}
+
+\subsection{Body force density}
+
+Assume that exists a vector valued function $\tenq{b}(\bullet, t)$ defined on $R_t$ called the body force per unit current volume such that
+
+\begin{enumerate}[label=(\roman*)]
+
+\item
+$\tenq{b}(\bullet,t)\in C(R_t)$
+\item
+The resultant force and resultant moment about $O$ due to the body forces acting on the material occupying $R_t$ are given by 
+
+\[\int_{R_t}\tenq{b}(\tenq{y},t)d\volume_{\tenq{y}},\int_{R_t}\tenq{y}\wedge\tenq{b}(\tenq{y},t)d\volume_{\tenq{y}}\]
+dim $\tenq{b} = [FL^{-3}]$
+\end{enumerate}
+
+
+\subsection{Contact forces, surface tractions}
+
+Assume there is a vector valued function $\tenq{t}(\bullet,\bullet,t)$ defined on $R_t\times u$ ($t_0\leq t \leq t_1$), $u\cdots$ set of all unit vector, called the surface force per unit current area or the actual surface traction or Cauchy traction with the properties: 
+
+\begin{enumerate}[label=(\roman*)]
+
+\item
+$\tenq{t}(\bullet,\bullet,t)\in C(R_t\times u)$
+\item
+If $S$ is a regular subsurface of $P$ and if $S_t = \hat{\tenq{y}}(S,t)\phantom{-}\forall t\in\tau$, then the resultant force and resultant moment about $O$ due to the contact forces acting over $S_t$ on the material occupying $P_t$ at time t are given by 
+
+\[\int_{S_t}\tenq{t}(\tenq{y},\tenq{n}(\tenq{y}),t)dA_{\tenq{y}}\cdots\text{resultant force}\]
+\[\int_{S_t}\tenq{y}\wedge\tenq{t}(\tenq{y},\tenq{n}(\tenq{y}),t)dA_{\tenq{y}}\cdots\text{resultant moment}\]
+dim $\tenq{t} = [FL^{-2}]$
+
+\begin{figure}[H]
+\centering
+\resizebox{0.42\textwidth}{!}{\input{figure29.eps_tex}}
+\caption{Scheme of contact forces, surface tractions}
+\label{Scheme of contact forces, surface tractions}
+\end{figure}
+
+\end{enumerate}
+
+
+
+\section{Conservation of linear momentum}
+
+\begin{align*}
+\int_{\partial P_t}\tenq{t}(\tenq{y},\tenq{n}(\tenq{y}),t)dA_{\tenq{y}} + \int_{P_t}\tenq{b}(\tenq{y},t)d\volume_{\tenq{y}}
+&= \frac{d}{dt} \int_{P_t}\rho(\tenq{y},t)\bar{\tenq{v}}(\tenq{y},t)d\volume_{\tenq{y}}\\
+&\vc{=}{RTT}{}\int_{P_t}\rho(\tenq{y},t)\bar{\tenq{a}}(\tenq{y},t)d\volume_{\tenq{y}}
+\end{align*}
+
+\section{Conservation of angular momentum}
+
+
+\begin{align*}
+&\int_{\partial P_t}\tenq{y}\wedge \tenq{t}(\tenq{y},\tenq{n}(\tenq{y}),t)dA_{\tenq{y}} 
++ \int_{P_t}\tenq{y}\wedge \tenq{b}(\tenq{y},t)d\volume_{\tenq{y}}\\
+&= \frac{d}{dt} \int_{P_t}\rho(\tenq{y},t)\tenq{y}\wedge \bar{\tenq{v}}(\tenq{y},t)d\volume_{\tenq{y}}\\
+&\vc{=}{RTT}{}\int_{P_t}\rho\vc{[\tenq{y}\wedge\bar{\tenq{v}}]}{\bullet}{} d\volume_{\tenq{y}}\\
+&\vc{=}{ \footnotemark}{}\int_{P_t}\rho\tenq{y}\wedge\bar{\tenq{a}}(\tenq{y},t)d\volume_{\tenq{y}}
+\end{align*}
+
+\footnotetext{$\dot{\tenq{y}}\wedge\bar{\tenq{v}} = \bar{\tenq{v}}\wedge\bar{\tenq{v}} = \tenq{0}$}
+
+\begin{example}{For $\tenq{b}(\tenq{y},t)$}
+
+Let the center of the earth be $O$, $O\not\in R_t$, mass of earth $M$, then the gravitational body force density 
+
+\[\tenq{b}(\tenq{y},t) = -\frac{\rho(\tenq{y},t)GM\tenq{y}}{\abs{\tenq{y}}^3}\phantom{-}\forall\tenq{y}\in R_t, t\in \tau\]
+
+where $G>0\cdots$ Universal constant of Gravitation.
+
+\end{example}
+
+\section{Existence of stress}
+
+The following celebrated theorem by Cauchy introduces and establishes the notion of stress based on Cauchy's postulate that \emph{tractions depend on the unit normal}, and by using linear momentum balance. 
+
+\begin{theorem}{Cauchy}
+
+Let $\hat{\tenq{y}}(\bullet,t)\colon R \to R_t$ be a motion and let $\tenq{t}(\bullet,\bullet,t)$ and $\tenq{b}(\bullet,t)$ be a traction and a body force density field such that linear momentum balance holds. Then there exists a second order tensor field $\tenq{\tau}(\bullet,t)\colon R_t \in \mathscr{L}$\footnote{$\mathscr{L}$ is set of all $2^{nd}$ order tensor} for each $t\in[t_0,t_1]$ such that
+
+\[\boxed{\tenq{t}(\tenq{n},\tenq{y},t) = \tenq{\tau}(\tenq{y},t)\tenq{n}}\phantom{-}\forall \tenq{n}\in u,\forall \tenq{y}\in R_t,\forall t\in \tau\]
+
+or 
+
+\[t_i^X(\tenq{n},\tenq{y},t) = \tau_{ij}^X(\tenq{y},t)n_j^X\]
+
+\end{theorem}
+
+\begin{proof}\mbox{}\\
+
+Fix $t\in [t_0,t_1]$
+
+\paragraph{Assertion 1}\mbox{}\\
+
+Given any $\tenq{y}\in R_t$ for $X = \left\{ {0;\tenq{e}_1,\tenq{e}_2,\tenq{e}_3} \right\} \in \mathscr{F}$ and unit vector $\tenq{n}$ with $\tenq{n}\cdot\tenq{e}_i>0$\\
+then 
+
+\[\tenq{t}(\tenq{n},\tenq{y}) = -\sum_{i=1}^{3}n_i\tenq{t}(-\tenq{e}_i,\tenq{y}), \phantom{-}n_i = \tenq{n}\cdot\tenq{e}_i\]
+\begin{proof}\mbox{}\\
+
+\begin{figure}[H]
+\centering
+\resizebox{1.0\textwidth}{!}{\input{figure30.eps_tex}}
+\caption{Scheme of tetrahedra}
+\label{Scheme of tetrahedra}
+\end{figure}
+
+\emph{Fix} $\tenq{y} = \mathring{\tenq{y}}$ in $R_t$ ($\mathring{\tenq{y}}$ is arbitrary)\\
+
+Let $h>0$ and consider the $h$-parameter family of tetrahedra $P(h)$
+\[
+\pi_i(h) \text{ has } -\tenq{e}_i \text{ as normal }
+\]
+
+\[
+\pi(h) \text{ has } \tenq{n} \text{ as normal }
+\]
+
+Area $\pi(h) = A(h) = c_1h^2$, where $c_1$ is a real number\\
+Area $\pi_i(h) = A_i(h) = A(h)n_i$
+
+Linear momentum for $P(h)\Rightarrow$
+
+\begin{equation}
+\int_{\partial P(h)}\tenq{t}(\tenq{n},\tenq{y})dA_{\tenq{y}} = \int_{P(h)}\left[\rho\bar{\tenq{a}}-\tenq{b}\right]d\volume_{\tenq{y}}\phantom{-},\text{volume } P(h) = c_2h^3
+\tag{1}\label{Existence of stress-(1)}
+\end{equation}
+
+the integral of R.H.S. of above is continuous on $R_t$ so exists $M$ such that $\abs{\rho\bar{\tenq{a}}-\tenq{b}}\leq M$ on $P(h)\phantom{-}\forall h\in [0,h_0]$
+
+\[\Rightarrow \abs{\int_{P(h)}\left[\rho\bar{\tenq{a}}-\tenq{b}\right]d\volume_{\tenq{y}}}\leq M\underbrace{c_2h^3}_{\text{volume}}\]
+from \eqref{Existence of stress-(1)} $\Rightarrow$
+
+\[\abs{\frac{1}{A(h)}\int_{\partial P(h)}\tenq{t}(\tenq{n},\tenq{y})dA_{\tenq{y}}}\leq\frac{Mc_2h^3}{A(h)} = \frac{Mc_2h^3}{c_1h^2}\to 0\text{ as } h\to 0\]
+
+\begin{equation}
+\Rightarrow \frac{1}{A(h)}\int_{\partial P(h)}\tenq{t}(\tenq{n},\tenq{y})dA_{\tenq{y}}\to 0\text{ as } h\to 0
+\tag{2}\label{Existence of stress-(2)}
+\end{equation}
+or 
+
+
+\begin{multline*}
+\frac{1}{A(h)}\int_{\partial P(h)}\tenq{t}(\tenq{n},\tenq{y})dA_{\tenq{y}} = \frac{1}{A(h)}\int_{\pi(h)}\tenq{t}(\tenq{n},\tenq{y})dA_{\tenq{y}} \\
++ \frac{1}{A(h)}\sum_{i=1}^3\int_{\pi_i(h)}\tenq{t}(-\tenq{e}_i,\tenq{y})dA_{\tenq{y}}
+\end{multline*}
+
+also since traction field is continuous we have that
+
+\[\abs{\tenq{t}(\tenq{n},\tenq{y}) - \tenq{t}(\tenq{n},\mathring{\tenq{y}})}\leq m(h)\to 0 \text{ as } h\to 0\]
+
+thus 
+
+\[\frac{1}{A(h)}\abs{\int_{\pi(h)}\left[\tenq{t}(\tenq{n},\tenq{y}) - \tenq{t}(\tenq{n},\mathring{\tenq{y}})\right]dA}\leq\frac{m(h)A(h)}{A(h)}=m(h)\to 0\]
+\[\text{ as } h\to 0\]
+
+hence
+
+\begin{align*}
+\frac{1}{A(h)}\int_{\pi(h)}\tenq{t}(\tenq{n},\tenq{y})dA_{\tenq{y}}
+&\to \frac{1}{A(h)}\tenq{t}(\tenq{n},\mathring{\tenq{y}})\underbrace{\int_{\pi(h)}dA_{\tenq{y}}}_{=A(h)}\text{ as } h\to 0\\
+&\to \tenq{t}(\tenq{n},\mathring{\tenq{y}})\text{ as } h\to 0
+\end{align*}
+
+Similarly
+
+\[\frac{A_i(h)}{A(h)}\frac{1}{A_i(h)}\int_{\pi_i(h)}\tenq{t}(-\tenq{e}_i,\tenq{y})dA_{\tenq{y}}\to \frac{A_i(h)}{A(h)}\tenq{t}(-\tenq{e}_i,\mathring{\tenq{y}})\]
+
+where $A_i(h) = A(h)n_i$
+
+\[\eqref{Existence of stress-(2)}\Rightarrow \tenq{t}(\tenq{n},\mathring{\tenq{y}}) + \sum_{i=1}^3n_i\tenq{t}(-\tenq{e}_i,\mathring{\tenq{y}}) = 0 \text{ for arbitrary }\mathring{\tenq{y}}\]
+
+\begin{equation}
+\therefore \tenq{t}(\tenq{n},\tenq{y}) = -\sum_{i=1}^3\tenq{t}(-\tenq{e}_i,\tenq{y})n_i\phantom{-}\forall \tenq{y}\in R_t
+\tag{3}\label{Existence of stress-(3)}
+\end{equation}
+
+
+
+
+
+\end{proof}
+
+Let $\tenq{n}\to \tenq{e}_1$, $\tenq{e}_2$, and $\tenq{e}_3$ respectively
+\[
+\left.
+\begin{aligned}
+& \tenq{t}(\tenq{e}_1,\tenq{y}) = -\tenq{t}(-\tenq{e}_1,\tenq{y})\\
+& \tenq{t}(\tenq{e}_2,\tenq{y}) = -\tenq{t}(-\tenq{e}_2,\tenq{y})\\
+& \tenq{t}(\tenq{e}_3,\tenq{y}) = -\tenq{t}(-\tenq{e}_3,\tenq{y})
+\end{aligned}
+\right\}
+\tenq{t}(\tenq{n},\tenq{y}) = -\tenq{t}(-\tenq{n},\tenq{y})
+\]
+$\cdots$ Newton's law of action and reaction\\
+
+So \eqref{Existence of stress-(3)} becomes
+
+\begin{equation}
+\tenq{t}(\tenq{n},\tenq{y}) = \sum_{i=1}^3n_i\tenq{t}(\tenq{e}_i,\tenq{y})\phantom{-}\forall\tenq{y}\in R_t\phantom{-}\forall\tenq{n}\in u
+\tag{4}\label{Existence of stress-(4)}
+\end{equation}
+
+\fbox{
+\begin{minipage}{25em}
+If we repeat the above proof in other quadrants
+, i.e. $n_i$ may not positive, the result still hold.
+Thus on can remove the restriction $n_i>0$
+\end{minipage}
+}
+
+Define the following 9 real numbers as follows
+
+\begin{equation}
+\tau_{ij}^X = \tenq{t}(\tenq{e}_j,\tenq{y})\cdot\tenq{e}_i
+\tag{5}\label{Existence of stress-(5)}
+\end{equation}
+
+\fbox{
+\begin{minipage}{25em}
+This is not consistent with the convention 
+we use in solid \\mechanics 
+$\tau_{ij}^X = \tenq{t}(\tenq{e}_i,\tenq{y})\cdot\tenq{e}_j$
+\end{minipage}
+}
+\begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{\input{figure31.eps_tex}}
+\caption{Scheme of orientation of stress}
+\label{Scheme of orientation of stress}
+\end{figure}
+
+e.g.
+\[\tau_{11}^X = \tenq{t}(\tenq{e}_1,\tenq{y})\cdot\tenq{e}_1\]
+\[\tau_{12}^X = \tenq{t}(\tenq{e}_2,\tenq{y})\cdot\tenq{e}_1\]
+
+dot multiply \eqref{Existence of stress-(4)} by $\tenq{e}_i$ and use definition \eqref{Existence of stress-(5)}
+
+\[t_i^X(\tenq{n},\tenq{y}) = \tenq{t}^X(\tenq{n},\tenq{y})\cdot\tenq{e}_i = \sum_{j=1}^3 \underbrace{\tenq{t}^X(\tenq{e}_j,\tenq{y})\cdot\tenq{e}_i}_{\tau_{ij}^X}n_j^X\]
+
+\[\Rightarrow t_i^X(\tenq{n},\tenq{y}) = \tau_{ij}^Xn_j^X\]
+or 
+\[t_i^X(\tenq{n},\tenq{y}) = \tau_{ij}^X(\tenq{y})n_j^X\phantom{-}\forall X\in \mathscr{F},\forall\tenq{y}\in R_t, \forall \tenq{n}\in u\]
+
+by quotient rule $\tau_{ij}^X$ represent component in $X$ of a tensor $\tenq{\tau}$
+
+\[\Rightarrow \tenq{t}(\tenq{n},\tenq{y}) = \tenq{\tau}(\tenq{y})\tenq{n}\]
+
+\[\tenq{\tau}(\tenq{y})\cdots\text{Cauchy stress tensor field}\]
+
+\end{proof}
+
+\begin{note}\mbox{}\\
+
+In general, we release time so that 
+
+\[\tenq{t}(\tenq{n}\footnotemark,\tenq{y},t) = \tenq{\tau}(\tenq{y},t)\tenq{n}\]
+
+\end{note}
+
+\footnotetext{$\tenq{n}(\tenq{y},t)$}
+
+\section{Local version of balance laws}
+
+\begin{theorem}\mbox{}\\
+
+The traction field $\tenq{t}$ and body force density $\tenq{b}$ associated with the motion $\hat{\tenq{y}}(\bullet,t)\colon R\to R_t$ satisfy linear and angular momentum balance if 
+
+\begin{enumerate}[label=(\roman*)]
+
+\item
+That exists $\tenq{\tau}(\bullet,t)\in C^1(R_t)$ such that $\tenq{t}(\tenq{n},\tenq{y},t) = \tenq{\tau}(\tenq{y},t)\tenq{n}$
+
+\item
+$\nabla \cdot \tenq{\tau}(\tenq{y},t) + \tenq{b}(\tenq{y},t) = \rho(\tenq{y},t)\bar{\tenq{a}}(\tenq{y},t)\phantom{-}\forall \tenq{y}\in R_t,\forall t\in \tau$
+
+\item
+$\tenq{\tau}(\tenq{y},t) = \tenq{\tau}^T(\tenq{y},t)$
+
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}\mbox{}\\
+
+\[\int_{\partial P_t}\tenq{t}dA_{\tenq{y}} = \int_{\partial P_t}\tenq{\tau}\tenq{n}dA_{\tenq{y}} = \int_{P_t}\left[\rho\bar{\tenq{a}}-\tenq{b}\right]d\volume_{\tenq{y}}\]
+
+by divergence theorem
+
+\[\Rightarrow\int_{P_t}\left[\nabla\cdot\tenq{\tau}+\tenq{b}-\rho\bar{\tenq{a}}\right]d\volume_{\tenq{y}} = 0\phantom{-}\forall P_t\subset R_t\]
+
+by continuity of integration and localization argument
+
+\begin{equation}
+\Rightarrow \nabla\cdot\tenq{\tau}(\tenq{y},t) + \tenq{b}(\tenq{y},t) = \rho(\tenq{y},t)\bar{\tenq{a}}(\tenq{y},t)\phantom{-}\forall\tenq{y}\in R_t
+\tag{$\ast$}\label{Local version of balance laws-*}
+\end{equation}
+
+or 
+
+\[\tau_{ij,j}(\tenq{y},t)+b_i(\tenq{y},t) = \rho(\tenq{y},t)\bar{a}_i(\tenq{y},t)\]
+
+Also from conservation of angular momentum and linear momentum
+
+\[\int_{\partial P_t}\tenq{y}\wedge\tenq{\tau}\tenq{n}dA_{\tenq{y}} + \int_{P_t}\tenq{y}\wedge\left[\tenq{b}-\rho\bar{\tenq{a}}\right]d\volume_{\tenq{y}} = \tenq{0}\]
+
+Let $B_{il} = \epsilon_{ijk}y_j\tau_{kl}$,\footnotemark $\tenq{B} = B_{ij}\tenq{e}_i\otimes \tenq{e}_j$
+
+\footnotetext{Define a vector $\tenq{g} = \tenq{\tau}\tenq{n}$ or $g_k = \tau_{kl}n_l$, then $\tenq{y}\wedge\tenq{\tau}\tenq{n} = \tenq{y}\wedge\tenq{g}$ or $\epsilon_{ijk}y_j\tau_{kl}n_l = \epsilon_{ijk}y_jg_k$. If we define $\tenq{B} = \tenq{y}\wedge\tenq{\tau}$ or $B_{il} = \epsilon_{ijk}y_j\tau_{kl}$ such that $\tenq{y}\wedge\tenq{\tau}\tenq{n} = \tenq{B}\tenq{n}$ or $\epsilon_{ijk}y_j\tau_{kl}n_l = B_{il}n_l$}
+
+\[\Rightarrow \int_{\partial P_t}\tenq{B}\tenq{n}dA_{\tenq{y}} + \int_{P_t}\tenq{y}\wedge\left[\tenq{b}-\rho\bar{\tenq{a}}\right]d\volume_{\tenq{y}} = \tenq{0}\]
+
+by divergence theorem
+
+\[\Rightarrow \int_{P_t}\left\{\nabla\cdot\tenq{B}+\tenq{y}\wedge\left[\tenq{b}-\rho\bar{\tenq{a}}\right]\right\}d\volume_{\tenq{y}} = \tenq{0}\]
+
+localization argument
+
+\[\Rightarrow \nabla\cdot\tenq{B}+\tenq{y}\wedge\left[\tenq{b}-\rho\bar{\tenq{a}}\right] = \tenq{0}\]
+
+but 
+\[\left[\nabla\cdot\tenq{B}\right]_i = \frac{\partial B_{il}}{\partial y_l} = \epsilon_{ijk}\frac{\partial \tau_{kl}}{\partial y_l}y_j + \epsilon_{ijk}\tau_{kl}\delta_{jl}\]
+
+\[\Rightarrow \nabla\cdot\tenq{B} = \tenq{y}\wedge\left(\nabla\cdot\tenq{\tau}\right) + \epsilon_{ijk}\tau_{kj}\tenq{e}_i\]
+
+\[\therefore \epsilon_{ijk}\tau_{kj}\tenq{e}_i+\tenq{y}\wedge\cancelto{0 \text{ from }\eqref{Local version of balance laws-*}}{\left[\nabla\cdot\tenq{\tau}+\tenq{b}-\rho\bar{\tenq{a}}\right]} = \tenq{0}\]
+
+\[\Rightarrow \epsilon_{ijk}\tau_{kj}\tenq{e}_i = \tenq{0}\text{ or }\epsilon_{ijk}\tau_{kj} = 0\]
+\[\Rightarrow \tenq{\tau} = \tenq{\tau}^T\cdots\text{symmetric tensor}\]
+
+\end{proof}
+
+However, if we analyze ferrofluid, $\tenq{\tau} \neq \tenq{\tau}^T$ because of the effect of \emph{body moment density} $\tenq{m}$. The balance of angular momentum would be rewritten as 
+
+\[\int_{P_t}\tenq{m}d\volume_{\tenq{y}} + \int_{\partial P_t}\tenq{y}\wedge\tenq{\tau}\tenq{n}dA_{\tenq{y}} + \int_{P_t}\tenq{y}\wedge\left[\tenq{b}-\rho\bar{\tenq{a}}\right]d\volume_{\tenq{y}} = \tenq{0}\]
+
+\begin{remark}\mbox{}\\
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item
+equation of motion (local version of conservation of linear momentum)
+\[\nabla\cdot\tenq{\tau} + \tenq{b} = \rho\underbrace{\left[\frac{\partial \bar{\tenq{v}}}{\partial t} + \left(\nabla\bar{\tenq{v}}\right)\bar{\tenq{v}}\right]}_{ = \bar{\tenq{a}}}\]
+
+\item
+For \emph{rest motions} where $\tenq{y} = \hat{\tenq{y}}(\tenq{x})$ (independent of $t$) then $\bar{\tenq{v}} = \bar{\tenq{a}} = \tenq{0}$. 
+
+\[\nabla\cdot\tenq{\tau} + \tenq{b} = \tenq{0} \text{ or }\tau_{ij,j} + b_i = 0\cdots\text{equilibrium equation}\]
+
+\item
+Since $\tenq{\tau} = \tenq{\tau}^T$ (symmetric)
+
+\[\tenq{\tau} = \sum_{i=1}^3\tau_i\tenq{e}_i\otimes\tenq{e}_i\]
+
+where 
+\begin{align*}
+\tau_i&\cdots\text{principal values of }\tenq{\tau}\text{ or principal stresses}\\
+\tenq{e}_i&\cdots\text{principal (spatial) axes or stresses}
+\end{align*}
+
+\item
+useful relation:\\
+recall the formula $\left(\tenq{u}\otimes\tenq{v}\right)\tenq{w} = \tenq{u}\left(\tenq{v}\cdot\tenq{w}\right)$
+
+\begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{\input{figure32.eps_tex}}
+\caption{Scheme of orientation of traction}
+\label{Scheme of orientation of traction}
+\end{figure}
+
+\[
+\left\{
+\begin{aligned}
+\tenq{t}_s &= \tenq{t}(\tenq{n})-\left(\tenq{t}(\tenq{n})\cdot\tenq{n}\right)\tenq{n}\\
+\tenq{t}_n &= \left(\tenq{t}(\tenq{n})\cdot\tenq{n}\right)\tenq{n}
+\end{aligned}
+\right.
+\Rightarrow
+\left\{
+\begin{aligned}
+\tenq{t}_s &= \left(\tenq{1}-\tenq{n}\otimes\tenq{n}\right)\tenq{t}\\
+\tenq{t}_n &= \left(\tenq{n}\otimes\tenq{n}\right)\tenq{t} = \left(\tenq{n}\cdot\tenq{\tau}\tenq{n}\right)\tenq{n}
+\end{aligned}
+\right.
+\]
+
+\end{enumerate}
+
+\end{remark}
+
+\begin{theorem}{Power theorem}
+
+Let $\hat{\tenq{y}}(\bullet,t)\colon R\to R_t$ be a motion with spatial velocity $\bar{\tenq{v}}$ and $\tenq{D} = \textit{sym }\nabla\bar{\tenq{v}}$. Then
+
+\[\int_{\partial P_t}\tenq{t}(\tenq{n})\cdot\bar{\tenq{v}}dA_{\tenq{y}} + \int_{P_t}\tenq{b}\cdot\bar{\tenq{v}}d\volume_{\tenq{y}} = \int_{P_t}\tenq{\tau}\cdot\tenq{D} d\volume_{\tenq{y}} + \frac{d}{dt}\int_{P_t}\frac{1}{2}\rho\abs{\bar{\tenq{v}}}^2 d\volume_{\tenq{y}}\]
+
+\end{theorem}
+
+\begin{proof}\mbox{}\\
+
+\begin{equation}
+\tenq{t}(\tenq{n})\cdot\bar{\tenq{v}} = \left(\tenq{\tau}\tenq{n}\right)\cdot\bar{\tenq{v}} = \tenq{n}\cdot\tenq{\tau}^T\bar{\tenq{v}} = \left(\tenq{\tau}\bar{\tenq{v}}\right)\cdot\tenq{n}
+\tag{1}\label{Power theorem-(1)}
+\end{equation}
+
+L.H.S. of identity to be proven. 
+
+\[
+r(t) \vc{=}{\eqref{Power theorem-(1)}}{\text{divergence theorem}} \int_{P_t}\left\{\nabla\cdot\left(\tenq{\tau}\bar{\tenq{v}}\right) + \tenq{b}\cdot\bar{\tenq{v}}\right\}d\volume_{\tenq{y}}
+\]
+
+\[\nabla\cdot\left(\tenq{\tau}\bar{\tenq{v}}\right) = \left(\tau_{ij}\bar{v}_{j}\right)_{,i} = \tau_{ij,i}\bar{v}_j + \tau_{ij}\bar{v}_{j,i} = \tau_{ji,i}\bar{v}_j + \tau_{ij}\bar{v}_{j,i}\]
+
+\begin{align*}
+\nabla\cdot\left(\tenq{\tau}\bar{\tenq{v}}\right)
+&= \left(\nabla\cdot\tenq{\tau}\right)\cdot\bar{\tenq{v}} + \tenq{\tau}\cdot\nabla\bar{\tenq{v}}\\
+&= \left(\nabla\cdot\tenq{\tau}\right)\cdot\bar{\tenq{v}} + \tenq{\tau}\cdot\left[\tenq{D} + \tenq{W}\right]\\
+&= \left[\nabla\cdot\tenq{\tau}\right]\cdot\bar{\tenq{v}} + \tenq{\tau}\cdot\tenq{D}
+\end{align*}
+
+where
+
+\begin{align*}
+\tenq{D}&= \textit{sym }\nabla\bar{\tenq{v}}\\
+\tenq{W}&= \textit{skew }\nabla\bar{\tenq{v}}
+\end{align*}
+
+\begin{align*}
+\Rightarrow
+r(t)
+&= \int_{P_t}\left\{\underbrace{\left[\nabla\cdot\tenq{\tau} + \tenq{b}\right]}_{=\rho\bar{\tenq{a}}}\cdot\bar{\tenq{v}} + \tenq{\tau}\cdot\tenq{D}\right\}d\volume_{\tenq{y}}\\
+&= \int_{P_t}\left\{\rho\bar{\tenq{a}}\cdot\bar{\tenq{v}} + \tenq{\tau}\cdot\tenq{D}\right\}d\volume_{\tenq{y}}
+\end{align*}
+
+recall the formula $\frac{1}{2}\frac{D}{Dt}\left(\bar{\tenq{v}}\cdot\bar{\tenq{v}}\right) = \frac{1}{2}\frac{D}{Dt}\abs{\bar{\tenq{v}}}^2$
+
+\[
+\bar{\tenq{a}}\cdot\bar{\tenq{v}} = \frac{1}{2}\vc{\left(\bar{\tenq{v}}\cdot\bar{\tenq{v}}\right)}{\bullet}{} = \vc{\left\{\frac{1}{2}\abs{\bar{\tenq{v}}}^2\right\}}{\bullet}{}
+\]
+
+\begin{align*}
+r(t)
+&= \int_{P_t}\tenq{\tau}\cdot\tenq{D}d\volume_{\tenq{y}} + \int_{P_t}\rho\vc{\left\{\frac{1}{2}\abs{\bar{\tenq{v}}}^2\right\}}{\bullet}{}d\volume_{\tenq{y}}\\
+&\vc{=}{RTT}{}\int_{P_t}\tenq{\tau}\cdot\tenq{D}d\volume_{\tenq{y}} + \frac{d}{dt}\int_{P_t}\frac{1}{2}\rho\abs{\bar{\tenq{v}}}^2d\volume_{\tenq{y}}
+\end{align*}
+\end{proof}
+
+\begin{remark}\mbox{}\\
+
+\begin{align*}
+\int_{\partial P_t}\tenq{t}\cdot\bar{\tenq{v}}dA_{\tenq{y}}
+&\cdots\text{power (rate of work) done by traction on }\partial P_t\\
+\int_{P_t}\tenq{b}\cdot\bar{\tenq{v}}d\volume_{\tenq{y}}
+&\cdots\text{power done by body force}\\
+\int_{P_t}\frac{1}{2}\rho\abs{\bar{\tenq{v}}}^2d\volume_{\tenq{y}}
+&\cdots\text{kinetic energy}\\
+\int_{P_t}\tenq{\tau}\cdot\tenq{D} d\volume_{\tenq{y}}
+&\cdots\text{stress power}
+\end{align*}
+
+\end{remark}

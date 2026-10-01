@@ -1,0 +1,76 @@
+\contentsline {chapter}{\numberline {1}Reviews on Euclidean space}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Elements of Cartesian Tensor Analysis}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Indicial notation}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Range convection}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Summation convection}{4}{section.2.3}%
+\contentsline {paragraph}{Rules}{5}{section*.2}%
+\contentsline {section}{\numberline {2.4}Kronecker delta}{6}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Alternating symbol}{7}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Representation of $3\times 3$ determinants}{8}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Connection with vector algebra}{10}{section.2.7}%
+\contentsline {paragraph}{Properties of $\mathscr {F}$ and $\mathscr {F}_+$}{11}{section*.18}%
+\contentsline {chapter}{\numberline {3}Introduction to Cartesian tensor}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Transformation of coordinate frames (Definition of Cartesian tensor)}{15}{section.3.1}%
+\contentsline {paragraph}{Property}{20}{section*.34}%
+\contentsline {section}{\numberline {3.2}Outer multiplication of tensors}{23}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Contraction of tensors}{23}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Operation between tensors}{24}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Inner product or fully-contracted outer product}{25}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Product of a second order tensor and a vector}{27}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Connection between second order tensors and linear vector function (l.v.f.)}{28}{section.3.7}%
+\contentsline {paragraph}{Uniqueness}{30}{section*.70}%
+\contentsline {section}{\numberline {3.8}Transpose of a second order tensor}{31}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Product between two second order tensors}{32}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Tensor (or dyadic) product between two vectors}{33}{section.3.10}%
+\contentsline {paragraph}{$\boxed {\Rightarrow }$}{34}{section*.71}%
+\contentsline {paragraph}{$\boxed {\Leftarrow }$}{34}{section*.72}%
+\contentsline {section}{\numberline {3.11}Orthogonal tensors}{36}{section.3.11}%
+\contentsline {section}{\numberline {3.12}Fundamental scalar invariant of a second order tensor}{36}{section.3.12}%
+\contentsline {section}{\numberline {3.13}Principal value and principal direction of second order tensors definition}{38}{section.3.13}%
+\contentsline {section}{\numberline {3.14}Symmetric tensors for second order tensors}{41}{section.3.14}%
+\contentsline {section}{\numberline {3.15}Skew-symmetric tensors for second order tensors}{49}{section.3.15}%
+\contentsline {section}{\numberline {3.16}Decomposition Theorem for second order tensors}{51}{section.3.16}%
+\contentsline {chapter}{\numberline {4}Tensor Calculus}{65}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Smoothness of tensor fields}{65}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Relation to vector calculus}{68}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Divergence theorem}{70}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Kinematics of a Continuum}{77}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Terminologies and definitions}{77}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Motion of a body}{81}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Study of Deformation}{89}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Deformation gradient field}{90}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Strain tensor in terms of displacement field}{102}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Geometric interpretation of $\tenq {E}$ or $E_{ij}^X$}{104}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Volume change}{109}{section.6.4}%
+\contentsline {paragraph}{Properties of the pure homogeneous definition}{110}{section*.269}%
+\contentsline {paragraph}{2-D illustration of the two Equivalent Resolution of $\mathcal {H}$}{112}{section*.280}%
+\contentsline {section}{\numberline {6.5}Direct geometrical interpretation of the Lagrangian Strain tensor field of an admissible deformation (General Deformation)}{114}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Infinitesimal deformation}{118}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Kinetics of Continuous Media}{123}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Mass density, conservation of mass (equation of continuity)}{124}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Postulate of mass conservation (Global Version)}{125}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Velocity and acceleration fields}{127}{section.7.3}%
+\contentsline {paragraph}{Caution}{128}{section*.332}%
+\contentsline {section}{\numberline {7.4}Material time derivative}{129}{section.7.4}%
+\contentsline {section}{\numberline {7.5}For locally volume preserving (isochoric motion)}{134}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Spatial velocity gradient tensor}{135}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Physical interpretation of $D_{ij}$}{138}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Conservation of mass for a control volume}{140}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Reynolds transport theorem (RTT)}{142}{section.7.9}%
+\contentsline {section}{\numberline {7.10}Body forces, contact forces, surface tractions}{143}{section.7.10}%
+\contentsline {subsection}{\numberline {7.10.1}Body force density}{144}{subsection.7.10.1}%
+\contentsline {subsection}{\numberline {7.10.2}Contact forces, surface tractions}{144}{subsection.7.10.2}%
+\contentsline {section}{\numberline {7.11}Conservation of linear momentum}{145}{section.7.11}%
+\contentsline {section}{\numberline {7.12}Conservation of angular momentum}{146}{section.7.12}%
+\contentsline {section}{\numberline {7.13}Existence of stress}{146}{section.7.13}%
+\contentsline {paragraph}{Assertion 1}{147}{section*.363}%
+\contentsline {section}{\numberline {7.14}Local version of balance laws}{153}{section.7.14}%
+\contentsline {chapter}{\numberline {8}Thermodynamics of Bodies}{159}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Energetic Axioms}{160}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Motivation and comparison with classical thermodynamics}{165}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Axioms of entropy and temperature}{166}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Thermodynamic process}{172}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Fundamental field equations for a thermodynamic process}{173}{section.8.5}%
+\contentsline {chapter}{Appendix Appendices}{175}{section*.449}%
+\contentsline {chapter}{Appendix \numberline {A}Some definitions concerning curves, surfaces, and regions}{177}{appendix.A}%
+\contentsline {chapter}{Bibliography}{179}{section*.450}%

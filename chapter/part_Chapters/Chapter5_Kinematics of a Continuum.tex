@@ -1,0 +1,301 @@
+\chapter{Kinematics of a Continuum}
+
+\section{Terminologies and definitions}
+
+\begin{itemize}
+\item \fbox{Body}\\
+
+A body occupies regions in $E_3$ and is composed of material points(or particles) to each of which the density of mass, momentum, and energy etc. are defined throughout the body in a continuously except, possibly, for a finite number of singular points, lines, surface, or volumes of discontinuously such as holes, cracks, voids, and cavities in the body which require special attention. 
+
+\item \fbox{Kinematics}\\
+
+Study of motion of bodies regardless the nature of force that cause the motion.
+
+\item \fbox{Deformations}\\
+
+Let a body occupies a region $R\in E_3$. Every particle can be located by its position vector $\tenq{x}$ from some fixed point $O$. When the body is deformed, every particle takes up new position vector denoted by $\tenq{y}$. (referred to the same origin $O$)
+
+\begin{figure}[H]
+\centering
+\resizebox{0.6\textwidth}{!}{\input{figure3.eps_tex}}
+
+\caption{Scheme for $R$}
+\label{Scheme for $R$ 3}
+\end{figure}
+
+Then the deformation of the body is known if the function 
+
+\begin{equation}
+\tenq{y} = \hat{\tenq{y}}(\tenq{x}) \text{ or }y_i = \hat{y}_i(\tenq{x}) \label{eq:3-1}\tag{1}
+\end{equation}
+
+is known. 
+
+\end{itemize}
+
+\begin{note}\mbox{}\\
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item
+It is possible that the body can occupy the same in two different states in which particles occupy different positions. 
+\begin{enumerate}[label= e.g.\alph*)]
+\item 
+A body occupies a sphere in $E_3$. It is then rotated but occupies the same sphere. The two state should be distinguishable. (an example of \emph{rigid deformation})
+
+\item 
+$R$ is a circular cylinder. Twist a rubble rod occupying $R$ and it is will still do so.
+\end{enumerate}
+
+\item 
+In continuum mechanics, we demand the mapping \eqref{eq:3-1} be 
+
+\begin{enumerate}[label= (\alph*)]
+\item 
+1 to 1 (globally), i.e. $\tenq{y} = \hat{\tenq{y}}(\tenq{x})$, $\tenq{x} = \hat{\tenq{x}}(\tenq{y})$ and $\hat{\tenq{y}}^{-1}(\tenq{x}) = \hat{\tenq{x}}(\tenq{y}) = \tenq{x} \phantom{-} \forall \tenq{x}\in R$ \label{deformation-a}
+
+\item 
+$\hat{\tenq{y}} \in C^1(R)$ and $\hat{\tenq{y}}^{-1} \in C^1(R')$\label{deformation-b}
+\item 
+$\det\nabla \hat{\tenq{y}}>0$ on $R$\label{deformation-c}
+
+\end{enumerate}
+
+Property \ref{deformation-a} guarantees that the body not penetrate itself, i.e. distinct particles occupy distinct positions in every state. 
+
+Property \ref{deformation-b} assumes \emph{no tearing}.
+
+Property \ref{deformation-c} represents two things: 
+\hfill
+\begin{itemize}
+
+\item
+1 to 1 correspondence of local directions.(curves that intersect each other at nonzero angle are not mapped on to the tangent ones)
+
+\item
+locally the volume of a part of the body(a subregion) per unit original volume is always grater than zero. 
+
+\end{itemize}
+
+Note that properties \ref{deformation-b}+\ref{deformation-c} does \emph{not} imply that $\hat{\tenq{y}}$ is globally 1 to 1 on $R$. They only imply that $\hat{\tenq{y}}$ is locally 1 to 1, i.e. could have $\det\nabla \hat{\tenq{y}}>0$ with $\tenq{y} = \hat{\tenq{y}}(\tenq{x}) = \hat{\tenq{y}}(\tenq{x'})$. 
+
+\begin{figure}[H]
+\centering
+\resizebox{0.6\textwidth}{!}{\input{figure4.eps_tex}}
+
+\caption{Scheme for properties \ref{deformation-b}+\ref{deformation-c}}
+\label{Scheme for properties}
+\end{figure}
+
+\item 
+
+$\tenq{y} = \hat{\tenq{y}}(\tenq{x})$, $\tenq{x} = \hat{\tenq{x}}(\tenq{y})$ and $\hat{\tenq{x}} = \hat{\tenq{y}}^{-1}\colon R' \to R$\\
+Then 
+\[\hat{\tenq{y}} ( \hat{\tenq{x}}(\tenq{y}) )= \tenq{y} \phantom{-} \forall \tenq{y} \in R'\]
+By chain rule
+\[
+\frac{\partial \hat{y}_i(\tenq{x})}{\partial x_k}\frac{\partial \hat{x}_k}{\partial y_j} = \frac{\partial y_i}{\partial y_j} = \delta_{ij}
+\]
+
+\begin{equation}
+\Rightarrow \boxed{\nabla \hat{\tenq{y}}(\tenq{x})\nabla \hat{\tenq{x}}(\tenq{y}) = \tenq{1}}\Rightarrow \det\nabla \hat{\tenq{y}}\det\nabla \hat{\tenq{x}} = 1  \label{eq:det of deformation}\tag{$\bigstar$}
+\end{equation}
+
+or
+
+\[\det\nabla \hat{\tenq{x}}(\tenq{y}) = \frac{1}{\det\nabla \hat{\tenq{y}}(\tenq{x})}\phantom{-} \forall \tenq{x}\in R\]
+
+\end{enumerate}
+\end{note}
+
+\begin{definition}
+We say that $\hat{\tenq{y}}\colon R \to R'$ is an \emph{admissible deformation} if 
+
+\begin{enumerate}[label= (\alph*)]
+
+\item
+$\hat{\tenq{y}}$ is 1 to 1 on $R$
+\item 
+$\hat{\tenq{y}} \in C^2(R)$
+\item 
+$\det\nabla \hat{\tenq{y}} > 0$ on $R$
+\end{enumerate}
+\begin{note}
+By the \emph{smooth inverse theorem}\footnotemark, then $\hat{\tenq{x}} = \hat{\tenq{y}}^{-1}$ on $R'$ is also admissible, i.e. $\hat{\tenq{x}} \in C^2(R')$; while $\det\nabla \hat{\tenq{x}}>0$ on $R'$ by equation \eqref{eq:det of deformation}. 
+\end{note}
+\footnotetext{referred to advanced calculus}
+\end{definition}
+
+\section{Motion of a body}
+
+For fixed choice of the region $R$ (called \emph{reference configuration})
+
+\[
+\hat{\tenq{y}}(\tenq{x},x) \colon R \to R_t, t\in [t_0,t_1]\equiv\tau
+\]
+represent the motion of the body.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.8\textwidth}{!}{\input{figure5.eps_tex}}
+
+\caption{the motion of a body}
+\label{Motion of a body}
+\end{figure}
+
+\begin{note}
+The reference configuration $R$ is arbitrary. It needs not occupied by the body at any time during the motion. You may even choose \emph{fictitious} one if it can help to simplify the formulation of the problem. The technique is often used in plastic mechanics. 
+\end{note}
+A continuous motion is one such that 
+\[\tenq{y} = \hat{\tenq{y}}(\bullet,t) \in C(\tau)\]
+\begin{definition}
+The Jacobian of the motion $\hat{\tenq{y}}(\bullet,\bullet)$ on $R\times \tau$ is 
+\[J(\tenq{x},t) = \det\nabla\hat{\tenq{y}}(\tenq{x},t)\phantom{-}\forall (\tenq{x},t)\in R \times \tau\]
+\end{definition}
+
+If we choose $R_{t*}$ as reference configuration where $t_* \in [t_0,t_1]$ then 
+
+\[\hat{\tenq{y}}(\tenq{x},t_*) = \tenq{x}\]
+
+\[\Rightarrow \nabla \hat{\tenq{y}}(\tenq{x},t_*) = \tenq{1}\Rightarrow J(\tenq{x},t_*) = 1\]
+\[J(\tenq{x},t) > 0 \phantom{-}\forall (\tenq{x},t)\in R \times \tau\]
+
+\begin{figure}[H]
+\centering
+\resizebox{0.6\textwidth}{!}{\input{figure6.eps_tex}}
+
+\caption{Jacobian versus time}
+\label{jacobian}
+\end{figure}
+
+\begin{definition}
+
+A motion is admissible if $\hat{\tenq{y}} \in C^2(R \times \tau)$
+
+\end{definition}
+
+
+\begin{note}\mbox{}\\
+
+\begin{enumerate}[label=(\alph*)]
+
+\item 
+Admissible motions are smooth one-parameter families of admissible deformations, $\hat{\tenq{y}}(\tenq{x},\bullet)$.
+
+\item
+$\frac{\partial \hat{\tenq{y}}(\tenq{x},t)}{\partial t},\frac{\partial^2 \hat{\tenq{y}}(\tenq{x},t)}{\partial t^2}$ exist and are continuous $\forall (\tenq{x},t)\in R \times \tau$.
+
+\item 
+There exists $\tenq{y}^{-1}(\bullet,t) = \tenq{x}(\bullet,t)$ defined on $R_t \phantom{-} \forall t \in \tau$. 
+
+\[\hat{\tenq{x}}(\bullet,t)\colon R_t \to R\]
+\[\hat{\tenq{x}}(\hat{\tenq{y}}(\tenq{x},t),t) = \tenq{x}\]
+\[\hat{\tenq{y}}(\hat{\tenq{x}}(\tenq{y},t),t) = \tenq{y}\]
+\[\hat{\tenq{x}}(\bullet,t)\in C^2(R_t)\phantom{-} \forall t \in \tau\]
+$\Rightarrow \frac{\partial \hat{\tenq{x}}}{\partial t},\frac{\partial^2 \hat{\tenq{x}}}{\partial t^2}$ exist and are continuous on $m \buildrel \Delta \over = \left\{ (\tenq{y},t),y\in R_t,t\in \tau\right\}$.
+
+\item
+Let $P$ be the particle of the body and $\tenq{y} = \hat{\tenq{y}}(\tenq{x},t)$ is the position vector of $P$ at time. 
+
+\begin{alignat*}{3}
+& x_i   \quad && \cdots  \quad && \text{Lagrangian coordinate of }P\\
+& y_i   \quad && \cdots  \quad && \text{Eulerian coordinate of }P
+\end{alignat*}
+
+For fixed $\tenq{x}$, $\hat{\tenq{y}}(\tenq{x},t)$ is the path line of $P$.
+
+\item 
+Given a motion let $\Psi$ be a field defined on $R\times\tau$, $\Psi = \Psi(\tenq{x},t), \tenq{x}\in R, t\in \tau$, then one may define $\psi$ on $m$ by 
+
+\[\psi(\tenq{y},t) = \Psi(\hat{\tenq{x}}(\tenq{y},t),t)\]
+where
+\[\hat{\tenq{x}}(\bullet,t) = \tenq{y}^{-1}(\bullet,t)\]
+
+Equivalently, given $\psi(\tenq{y},t)$ on $m$ one can define $\Psi (\tenq{x},t)$ such that 
+\[\Psi(\tenq{x},t) = \psi(\hat{\tenq{y}}(\tenq{x},t),t)\phantom{-} \forall (\tenq{x},t) \in R \times \tau\]
+In this case we refer to $\Psi (\tenq{x},t)$ as a reference (or a material) field and $\psi (\tenq{y},t)$ as spatial field. 
+\end{enumerate}
+\end{note}
+
+\begin{example}
+Consider the motion of a body
+
+\begin{align*}
+y_1 &= x_1 + ktx_2\\
+y_2 &= x_2\\
+y_3 &= x_3
+\end{align*}
+
+The Lagrangian coordinate $\tenq{x}$ gives the position of a particle at $t = 0$.
+
+\begin{enumerate}[label=(\alph*)]
+
+\item 
+Sketch the configuration of a unit cube at time $t$. 
+\item 
+If the temperature field is given by 
+
+\[\theta = y_1 + y_2\]
+find the material field of temperature.
+
+\item 
+Find the velocity the rate of change of temperature for particular material particles. Express both in material and spatial description.
+
+\end{enumerate}
+\end{example}
+
+\begin{solution}\mbox{}\\
+
+\begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{\input{figure7.eps_tex}}
+
+\caption{Scheme of example}
+\label{example L/E}
+\end{figure}
+
+\begin{enumerate}[label=(\alph*)]
+
+\item 
+By particle on $OA$
+\begin{align*}
+\left(x_1,x_2,x_3\right)_{OA} &= \left(x_1,0,x_3\right)\\
+\left(y_1,y_2,y_3\right)_{OA} &= \left(x_1,0,x_3\right)
+\end{align*}
+i.e. $OA$ does not change.\\
+
+For $CB$
+\begin{align*}
+\left(x_1,x_2,x_3\right)_{CB} &= \left(x_1,1,x_3\right)\\
+\left(y_1,y_2,y_3\right)_{CB} &= \left(x_1+kt,1,x_3\right)
+\end{align*}
+i.e. $CB$ move horizontally through a distance $kt$.\\
+
+For $OC$
+\begin{align*}
+\left(x_1,x_2,x_3\right)_{OC} &= \left(0,x_2,x_3\right)\\
+\left(y_1,y_2,y_3\right)_{OC} &= \left(ktx_2,x_2,x_3\right)
+\end{align*}
+i.e. particle on $OC$ move horizontally through a distance linearly proportional to its height.\\
+Similarly for $AB$.
+
+\item
+$\theta = y_1 + y_2 = x_1 + ktx_2 + x_2 = x_1 + \left(kt+1\right)x_2$
+
+\item Velocity components of the particle with Lagrangian position vector $\tenq{x}$. 
+\[{v_i} = {\left. {\frac{{\partial {y_i}(\tenq{x},t)}}{{\partial t}}} \right|_{\tenq{x} \text{ fixed}}}\]
+
+\[\Rightarrow\left\{\begin{aligned}
+& v_1 = kx_2,v_2 = 0,v_3 = 0 \cdots \text{material field of velocity}\\
+& v_1 = ky_2,v_2 = 0,v_3 = 0 \cdots \text{spatial field of velocity}\end{aligned}\right.\]
+
+Rate of change of temperature
+
+\begin{align*}
+{\left. {\frac{{\partial \theta }}{{\partial t}}} \right|_{\tenq{x} \text{ fixed}}} &= kx_2 \cdots \text{material field of temperature}\\
+&= ky_2 \cdots \text{spatial field of temperature}
+\end{align*}
+
+\end{enumerate}
+
+\end{solution}

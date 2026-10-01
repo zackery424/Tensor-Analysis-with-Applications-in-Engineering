@@ -1,0 +1,85 @@
+\documentclass[17pt,a4paper,twoside]{extbook}
+\include{macros}
+
+\setlength{\headheight}{85.0pt}
+
+\begin{document}
+
+\frontmatter
+
+\maketitle
+
+
+\pagenumbering{Roman}
+%\pagestyle{empty}
+%\pagenumbering{gobble}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\textbf{\leftmark}}
+\fancyfoot[C,CO]{\thepage}
+\tableofcontents
+
+%\listoffigures
+
+%\newpage
+%\pagestyle{empty}
+
+\newpage
+\mainmatter
+\pagenumbering{arabic}
+\pagestyle{fancy}
+%\setcounter{page}{1}
+\fancyhf{}
+\fancyhead[CO]{\textbf{\leftmark}}
+\fancyhead[CE]{\textbf{\rightmark}}
+%\fancyhead[C]{\textbf{\leftmark}}
+%\fancyhead[C]{\textbf{\rightmark}}
+\fancyfoot[C,CO]{\thepage}
+\fancyfoot[L,L]{\footnotesize Prof. Yi-Chun Wang}
+\renewcommand{\footrulewidth}{1pt}
+
+\raggedright
+
+
+
+
+\input{chapter/part_Chapters/Chapter1_Reviews on Euclidean space.tex}
+\input{chapter/part_Chapters/Chapter2_Elements of Cartesian Tensor Analysis.tex}
+\input{chapter/part_Chapters/Chapter3_Introduction to Cartesian tensor.tex}
+
+
+
+\input{chapter/part_Chapters/Chapter4_Tensor Calculus.tex}
+\input{chapter/part_Chapters/Chapter5_Kinematics of a Continuum.tex}
+\input{chapter/part_Chapters/Chapter6_Study of Deformation.tex}
+\input{chapter/part_Chapters/Chapter7_Kinetics of Continuous Media.tex}
+\input{chapter/part_Chapters/Chapter8_Thermodynamics of Bodies.tex}
+%
+
+
+\cleardoublepage
+\begin{appendices}
+\phantomsection
+\addcontentsline{toc}{chapter}{Appendices}
+\appendix
+
+
+\appendixpage
+\noappendicestocpagenum
+
+\input{chapter/part_Appedices/Some definitions concerning curves, surfaces, and regions.tex}
+\end{appendices}
+
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{plain}
+\bibliography{sample123}
+
+
+
+\nocite{*}
+
+
+
+\end{document}

@@ -1,0 +1,969 @@
+\chapter{Study of Deformation}
+
+If $R$ is the reference configuration of a body, let $\hat{\tenq{y}}(\bullet,t)\colon R \to R_t$. Choose any $t_d \in \tau$. Let $R_d\equiv R_{t_d} = \hat{\tenq{y}}(R,t_d)$, so we can write 
+\[\hat{\tenq{y}}(\bullet,t_d) = \hat{\tenq{y}}(\bullet) \colon R \to R_d\]
+where $\hat{\tenq{y}}(\bullet)$ is a deformation. \\
+
+Define a \emph{displacement field} $\tenq{u}(\tenq{x})$ such that 
+\[\hat{\tenq{y}}(\tenq{x}) = \tenq{x} + \tenq{u}(\tenq{x})\]
+
+\begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{\input{figure8.eps_tex}}
+
+\caption{Scheme of deformation field}
+\label{Scheme of deformation field}
+\end{figure}
+
+\section{Deformation gradient field}
+
+\[\tenq{F}(\tenq{x}) = \nabla \hat{\tenq{y}}(\tenq{x}) \in \mathscr{L}_{+}\]
+
+where $\mathscr{L}_{+}$ is set of all $2^{nd}$ order tensor with positive determinant\\
+
+or 
+
+\[F_{ij} = \frac{\partial y_i(\tenq{x})}{\partial x_j} = y_{i,j} \text{ on }R\]
+\[\det\tenq{F}(\tenq{x}) = \det \nabla \hat{\tenq{y}}(\tenq{x}) = J(\tenq{x})>0\]
+\[\nabla \hat{\tenq{x}}(\tenq{y}) = \tenq{F}^{-1}(\hat{\tenq{x}}(\tenq{y}))\phantom{-}\forall\tenq{y}\in R_d\]
+\[\because \hat{\tenq{y}}(\tenq{x}) = \tenq{x} + \tenq{u}(\tenq{x})\]
+\[\Rightarrow \nabla \hat{\tenq{y}}(\tenq{x}) = \tenq{1} + \nabla \tenq{u}(\tenq{x})\]
+\[\Rightarrow \tenq{F}(\tenq{x}) = \tenq{1} + \nabla \tenq{u}(\tenq{x})\]
+or 
+\[F_{ij}(\tenq{x}) = \delta_{ij} + u_{i,j}(\tenq{x})\]
+where $\nabla \tenq{u}(\tenq{x})$ is called displacement gradient field.
+
+
+\begin{lemma} \label{volume function for subregion}
+
+Let $\hat{\tenq{y}}\colon R \to R_d$ be a deformation and let $\phi \colon R_d \to R$ be continuous. Then for any subregion (compact) $P_d \subset R_d$
+
+\[\int_{P_d} \phi (\tenq{y}) d\volume_{\tenq{y}} =   \int_{P} \phi (\hat{\tenq{y}}(\tenq{x}))J(\tenq{x})d\volume_{\tenq{x}}\]
+
+where 
+
+\begin{align*}
+P &= \hat{\tenq{y}}^{-1}(P_d), P_d = \hat{\tenq{y}}(P)\\
+J &= \det \nabla \hat{\tenq{y}} \text{ on }R
+\end{align*}
+\end{lemma}
+
+\begin{definition}
+
+$\hat{\tenq{y}}\colon R \to R_d$ is \emph{locally volume preserving} (l.v.p.) or \emph{isochoric} if for \emph{every} compact $P \subset R$
+
+\[\text{volume }P = \text{volume }P_d, P_d = \hat{\tenq{y}}(P)\]
+
+\end{definition}
+
+
+\begin{claim}
+
+A definition $\hat{\tenq{y}}\colon R \to R_d$ is isochoric if and only if $J(\tenq{x}) = 1 \phantom{-}\forall \tenq{x} \in R$
+
+\end{claim}
+
+\begin{proof}\mbox{}\\
+
+For any $P \subset R$ with $P_* = \hat{\tenq{y}}(P)\subset R_*$
+
+\[\text{volume }(P) = \int_P d\volume_{\tenq{x}}\]
+\[ \text{volume }(P_*) = \int_{P_*} d\volume_{\tenq{y}} \vc{=}{Lemma}{\eqref{volume function for subregion}} \int_P J(\tenq{x})d\volume_{\tenq{x}}\]
+
+Hence $\hat{\tenq{y}}$ is l.v.p. if and only if 
+\[\text{volume }(P) - \text{volume }(P_*) = 0\]
+or 
+\[\int_P \left[J(\tenq{x}) - 1 \right] d\volume_{\tenq{x}} = 0 \phantom{-}\forall P \subset R\]
+\[\Rightarrow J(\tenq{x}) = 1\]
+
+Define an incompressible body as that possible induced deformation are l.v.p.
+
+
+\end{proof}
+
+\begin{definition}{Rigid Deformation}
+
+An admissible deformation $\hat{\tenq{y}}\colon R \to R_*$ is rigid if 
+
+\[\abs{\hat{\tenq{y}}(\tenq{x}) - \hat{\tenq{y}}(\tenq{z})} = \abs{\tenq{x} - \tenq{z}}\phantom{-}\forall \tenq{x},\tenq{z} \in R\]
+
+\begin{figure}[H]
+\centering
+\resizebox{0.7\textwidth}{!}{\input{figure9.eps_tex}}
+
+\caption{Scheme of rigid deformation}
+\label{Scheme of rigid deformation}
+\end{figure}
+
+\end{definition}
+
+\begin{claim}
+
+$\hat{\tenq{y}}$ is rigid if and only if 
+
+\begin{equation}
+\tenq{y} = \hat{\tenq{y}}(\tenq{x}) = \tenq{Q}\tenq{x} + \tenq{c} \tag{1} \label{rigid deformation}
+\end{equation}
+
+where \\
+
+$\tenq{c}$ is a constant tensor \\
+$\tenq{Q}$ is a constant proper orthogonal $2^{nd}$ order tensor, i.e. $\tenq{Q}\tenq{Q}^T = \tenq{1}, \det\tenq{Q} = +1$ 
+
+
+\end{claim}
+
+\begin{proof}\mbox{}\\
+
+\q{$\Leftarrow$} Assume that \eqref{rigid deformation} holds. Then \eqref{rigid deformation} is admissible since
+
+
+\begin{itemize}
+
+\item 
+\eqref{rigid deformation} is 1 to 1
+
+\item 
+\eqref{rigid deformation} is $C^{\infty}(R)$
+
+\item From \eqref{rigid deformation}
+\[\nabla \hat{\tenq{y}} = \tenq{F}(\tenq{x}) = \tenq{Q}\]
+or 
+\[y_{i,j} = \frac{\partial}{\partial x_j}\left(Q_{ik}x_k + c_i \right) = Q_{ij}\]
+\[\Rightarrow \det \tenq{F} = \det \nabla \hat{\tenq{y}} = \det \tenq{Q} = +1 >0\]
+\[\abs{\hat{\tenq{y}}(\tenq{x}) - \hat{\tenq{y}}(\tenq{z})} \vc{=}{\eqref{rigid deformation}}{} \abs{\tenq{Q}\left(\tenq{x} - \tenq{z}\right)} \vc{=}{}{\downarrow} \abs{\tenq{x} - \tenq{z}}\]
+
+Recall $\tenq{u}\cdot\tenq{W}\tenq{v} = \left(\tenq{W}^T\tenq{u}\right)\cdot\tenq{v}$
+
+\begin{align*}
+\therefore\abs{\tenq{Q}\left(\tenq{x} - \tenq{z}\right)} 
+&= \sqrt{\underbrace{\tenq{Q}\left(\tenq{x} - \tenq{z}\right)}_{\tenq{u}}\cdot\underbrace{\tenq{Q}}_{\tenq{W}}\underbrace{\left(\tenq{x} - \tenq{z}\right)}_{\tenq{v}}}\\
+&= \sqrt{\underbrace{\tenq{Q}^T\tenq{Q}}_{\tenq{1}}\left(\tenq{x} - \tenq{z}\right)\cdot\left(\tenq{x} - \tenq{z}\right)}\\
+&= \abs{\tenq{x} - \tenq{z}}
+\end{align*}
+\end{itemize}
+
+\q{$\Rightarrow$} Assume that $\hat{\tenq{y}}$ is rigid then
+\[\left[\hat{y}_i(\tenq{x}) - \hat{y}_i(\tenq{z}) \right]\left[\hat{y}_i(\tenq{x}) - \hat{y}_i(\tenq{z}) \right] - \left(x_i - z_i\right)\left(x_i - z_i\right) = 0\]
+
+Take $\frac{\partial}{\partial x_j}$ of above
+\[2F_{ij}(\tenq{x})\left[\hat{y}_i(\tenq{x}) - \hat{y}_i(\tenq{z}) \right] - 2\delta_{ij}\left(x_i - z_i\right) = 0\]
+\[\Rightarrow\tenq{F}^T(\tenq{x})\left[\hat{\tenq{y}}(\tenq{x}) - \hat{\tenq{y}}(\tenq{z}) \right] = \tenq{x} - \tenq{z}\]
+or 
+
+\[2F_{ij}(\tenq{x})\left[\hat{y}_i(\tenq{x}) - \hat{y}_i(\tenq{z}) \right] - 2\delta_{ij}\left(x_i - z_i\right) = 0\]
+\[\Rightarrow\tenq{F}^T(\tenq{x})\left[\hat{\tenq{y}}(\tenq{z}) - \hat{\tenq{y}}(\tenq{x}) \right] = \tenq{z} - \tenq{x}\]
+Take gradient with respect to $\tenq{z}$
+
+\begin{equation}
+\tenq{F}^T(\tenq{x})\tenq{F}(\tenq{z}) = \tenq{1}\phantom{-}\forall\tenq{x},\tenq{z}\in R \tag{2} \label{F of rigid deformation}
+\end{equation}
+
+Set $\tenq{z} = \tenq{x}$
+
+\[\tenq{F}^T(\tenq{x})\tenq{F}(\tenq{x}) = \tenq{1} \Rightarrow \tenq{F}(\tenq{x}) \text{ is orthogonal}\]
+
+Fixed $\tenq{x}$ in \eqref{F of rigid deformation}, $\tenq{F}(\tenq{z})$ is constant tensor. \\
+$\det \tenq{F}>0$ ($\because$ admissible) $\Rightarrow \tenq{F}$ is constant and proper orthogonal or $\tenq{F} = \tenq{Q}$. 
+
+\end{proof}
+
+\begin{note}
+If $\tenq{v} = \tenq{x} - \tenq{z}$, $\tenq{v}_* = \hat{\tenq{y}}(\tenq{x}) - \hat{\tenq{y}}(\tenq{z})$, then 
+$\tenq{v}_* = \tenq{Q}\tenq{v}$.
+\end{note}
+
+\begin{remark}\mbox{}\\
+
+\begin{enumerate}[label=(\alph*)]
+\item 
+A reflection is distance preserving but not admissible ($\because \det \tenq{F}<0$) and thus not rigid. 
+
+\item 
+Rigid deformation is l.v.p. since $J = 1$.
+\[J = \det \nabla \hat{\tenq{y}} = \det\tenq{F}(\tenq{x}) = \det \tenq{Q} = 1\]
+
+
+\end{enumerate}
+\end{remark}
+
+
+
+\begin{definition}{Homogeneous Deformation}
+
+A deformation $\hat{\tenq{y}}\colon R \to R_*$ is homogeneous if $\nabla \hat{\tenq{y}} = $ constant tensor on $R$, i.e. there exists $\tenq{F} = \text{ constant }\in \mathscr{L}_+$ (set of all $2^{nd}$ order tensors with positive determinant, $\det \tenq{F} >0$) and $\tenq{c}=\text{ constant }\in E_3$ such that
+
+\[\tenq{y} = \hat{\tenq{y}} = \tenq{F}\tenq{x} + \tenq{c}\phantom{-}\forall\tenq{x} \in R\]
+
+\end{definition}
+
+Any general admissible deformation, $\tenq{y} = \hat{\tenq{y}}(\tenq{x})$, is homogeneous locally.\\
+Let $\tenq{y} = \hat{\tenq{y}}(\tenq{x})$ be a general deformation (admissible)
+
+\begin{figure}[H]
+\centering
+\resizebox{0.7\textwidth}{!}{\input{figure10.eps_tex}}
+
+\caption{Scheme of homogeneous deformation locally}
+\label{Scheme of homogeneous deformation locally}
+\end{figure}
+
+For any $\mathring{\tenq{x}} \in R$ by Taylor theorem and smoothness of any admissible deformation
+
+\[\hat{\tenq{y}}(\tenq{x}) = \hat{\tenq{y}}(\mathring{\tenq{x}}) + \tenq{F}(\mathring{\tenq{x}})\left(\tenq{x} - \mathring{\tenq{x}}\right) + O\left(\abs{\tenq{x} - \mathring{\tenq{x}}}\right)\]
+
+As $\abs{\tenq{x} - \mathring{\tenq{x}}}\to 0$
+\[\hat{y}_i(\tenq{x}) = \hat{y}_i(\mathring{\tenq{x}}) + \frac{\partial \hat{y}_i(\mathring{\tenq{x}})}{\partial x_j}\left(x_j - \mathring{x}_j\right)\]
+or 
+\[\hat{\tenq{y}}(\tenq{x}) = \tenq{F}(\mathring{\tenq{x}})\tenq{x} + \hat{\tenq{y}}(\mathring{\tenq{x}}) - \tenq{F}(\mathring{\tenq{x}})\mathring{\tenq{x}}\]
+i.e.
+
+\[\hat{\tenq{y}}(\tenq{x}) = \tenq{F}\tenq{x} + \tenq{c}\]
+where
+
+
+\[\tenq{F} = \tenq{F}(\mathring{\tenq{x}}) = \text{ constant tensor}, \det\tenq{F}(\mathring{\tenq{x}})>0\]
+\[\tenq{c} \buildrel \Delta \over =  \hat{\tenq{y}}(\mathring{\tenq{x}}) - \tenq{F}(\mathring{\tenq{x}})\mathring{\tenq{x}} = \text{ constant }\]
+
+\begin{claim}\mbox{}\\
+
+\begin{enumerate}[label=(\alph*)]
+
+\item 
+For a homogeneous deformation
+\[\mathcal{H}\colon \tenq{y} = \hat{\tenq{y}}(\tenq{x}) = \tenq{F}\tenq{x} + \tenq{c}\]
+$\det \tenq{F}>0, \tenq{x} \in R$, the inverse $\hat{\tenq{y}}^{-1}$ is also a homogeneous deformation. 
+
+\item 
+If further\footnotemark
+\[\mathcal{H}'\colon \hat{\tenq{y}}'(\tenq{x}) = \tenq{F}'\tenq{x} + \tenq{c}',\det\tenq{F}'>0\]
+\[\mathcal{H}''\colon \hat{\tenq{y}}''(\tenq{x}) = \tenq{F}''\tenq{x} + \tenq{c}'',\det\tenq{F}''>0\]
+Then $\mathcal{H} = \mathcal{H}'\mathcal{H}''$ defined as 
+
+\[\hat{\tenq{y}}(\tenq{x}) = \tenq{F}''(\hat{\tenq{y}}'(\tenq{x})) + \tenq{c}''\]
+is also homogeneous. 
+
+\footnotetext{$\mathcal{H}'$ and $\mathcal{H}''$ are not \emph{prime} , they mean the different deformation but in same motion.}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.7\textwidth}{!}{\input{figure11.eps_tex}}
+
+\caption{Scheme of homogeneous deformation continuously}
+\label{Scheme of homogeneous deformation continuously}
+\end{figure}
+
+
+\end{enumerate}
+
+\end{claim}
+
+\begin{proof}\mbox{}\\
+
+\begin{enumerate}[label=(\alph*)]
+
+\item 
+\[\hat{\tenq{y}} = \tenq{F}\tenq{x} + \tenq{c}\]
+\[\Rightarrow\tenq{F}^{-1}\hat{\tenq{y}} = \tenq{x} + \tenq{F}^{-1}\tenq{c}\]
+\[\therefore \tenq{x} = \hat{\tenq{x}}(\tenq{y}) = \tenq{F}^*\tenq{y} + \tenq{c}^*\]
+
+where 
+
+\begin{align*}
+\tenq{F}^* 
+&= \tenq{F}^{-1} = \text{ constant and }\det\tenq{F}^* = \det\tenq{F}^{-1} > 0\footnotemark\\
+\tenq{c}^* &= -\tenq{F}^{-1}\tenq{c} = \text{ constant}
+\end{align*}
+\footnotetext{$\because \det \tenq{F}>0$}
+\item 
+\[\hat{\tenq{y}}(\tenq{x}) = \tenq{F}''\left(\tenq{F}'\tenq{x} + \tenq{c}'\right) + \tenq{c}'' = \tenq{F}\tenq{x} + \tenq{c}\]
+
+where 
+
+\begin{align*}
+\tenq{F} &= \tenq{F}''\tenq{F}' = \text{ constant},\det\tenq{F} = \det\tenq{F}''\det\tenq{F}'>0\\
+\tenq{c} &= \tenq{F}''\tenq{c}' + \tenq{c}'' = \text{ constant}
+\end{align*}
+
+\end{enumerate}
+\end{proof}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.7\textwidth}{!}{\input{figure12.eps_tex}}
+
+\caption{Scheme of homogeneous deformation}
+\label{Scheme of homogeneous deformation}
+\end{figure}
+
+\begin{align*}
+\tenq{v} &= \tenq{z} - \tenq{x}\\
+\tenq{v}^* 
+& = \hat{\tenq{y}}(\tenq{z}) - \hat{\tenq{y}}(\tenq{x})\\
+& = \left(\tenq{F}\tenq{z} + \tenq{c}\right) - \left(\tenq{F}\tenq{x} + \tenq{c}\right)\\
+& = \tenq{F}\left(\tenq{z}-\tenq{x}\right) = \tenq{F}\tenq{v}
+\end{align*}
+
+\begin{equation}
+\boxed{\tenq{v}^* = \tenq{F}\tenq{v} \text{ or }v_i^* = F_{ij}v_j}\tag{1} \label{homogeneous deformation}
+\end{equation} 
+
+For a rigid deformation, $\tenq{F} = \tenq{Q}$, $v_i^* = Q_{ij}v_j$, i.e. pure rotation. 
+
+\begin{theorem}\mbox{}\\
+
+Let $\tenq{v}$, $\tenq{w}$ be vectors in $R$, $\tenq{v}^*$, $\tenq{w}^*$ be their images under homogeneous deformation
+
+\[\mathcal{H}\colon \hat{\tenq{y}}(\tenq{x}) = \tenq{F}\tenq{x} + \tenq{c}\]
+Then 
+
+\begin{equation}
+\tenq{v}^*\cdot\tenq{w}^* - \tenq{v}\cdot\tenq{w} = 2\tenq{v}\cdot\left(\tenq{E}\tenq{w}\right) = 2v_iE_{ij}w_j = 2E_{ij}v_iw_j \tag{2} \label{homogeneous deformation- dot}
+\end{equation}
+
+where 
+
+\begin{equation}
+\tenq{E} = \frac{1}{2}\left\{ \tenq{F}^T\tenq{F}  - \tenq{1}\right\} \cdots\text{Lagrangian (Green) strain tensor} \tag{3} \label{Lagrangian (Green) strain tensor}
+\end{equation}
+
+or 
+
+\begin{align*}
+E_{ij} &= \frac{1}{2}\left\{F_{ik}^TF_{kj} - \delta_{ij} \right\} = \frac{1}{2}\left\{F_{ki}F_{kj} - \delta_{ij} \right\} \\
+&= \frac{1}{2}\left\{ \frac{\partial y_k}{\partial x_i}\frac{\partial y_k}{\partial x_j} - \delta_{ij}\right\}
+\end{align*}
+\[\cdots \text{Components of Lagrangian (Green) strain tensor}\]
+
+\begin{proof}
+
+\begin{align*}
+\tenq{v}^*\cdot\tenq{w}^* - \tenq{v}\cdot\tenq{w} 
+&\vc{=}{\eqref{homogeneous deformation}}{}\tenq{F}\tenq{v}\cdot\tenq{F}\tenq{w} - \tenq{v}\cdot\tenq{w}\\
+& = \footnotemark \tenq{F}^T\tenq{F}\tenq{w}\cdot\tenq{v} - \tenq{v}\cdot\tenq{w}\\
+& = \tenq{v}\cdot\tenq{F}^T\tenq{F}\tenq{w} - \tenq{v}\cdot\tenq{w}\\
+& = \tenq{v}\cdot\left(\tenq{F}^T\tenq{F} - \tenq{1}\right)\tenq{w}\\
+&\vc{=}{\eqref{homogeneous deformation- dot}}{}2\tenq{v}\cdot\tenq{E}\tenq{w}
+\end{align*}
+\footnotetext{$\tenq{F}\tenq{w}\cdot\tenq{F}\tenq{v} = \tenq{F}^T\tenq{F}\tenq{w}\cdot\tenq{v}$}
+
+\end{proof}
+
+When $\tenq{F} = \tenq{Q}$ (rigid deformation) $\Rightarrow\tenq{E} = \tenq{0}$
+
+\begin{note}
+
+\begin{align*}
+\tenq{v}^*\cdot\tenq{w}^* - \tenq{v}\cdot\tenq{w} 
+&\vc{=}{\eqref{homogeneous deformation}}{}\tenq{v}^*\cdot\tenq{w}^* - \tenq{F}^{-1}\tenq{v}^*\cdot\tenq{F}^{-1}\tenq{w}^*\\
+& = \tenq{v}^*\cdot\tenq{w}^* - \tenq{v}^*\cdot\tenq{F}^{-T}\tenq{F}^{-1}\tenq{w}^*\\
+& = \tenq{v}^*\cdot\left(\tenq{1}-\tenq{F}^{-T}\tenq{F}^{-1}\right)\tenq{w}\\
+&\vc{=}{\Delta}{}2\tenq{v}^*\cdot\tenq{M}\tenq{w}^*
+\end{align*}
+where 
+\[\tenq{M} = \frac{1}{2}\left\{\tenq{1} - \tenq{F}^{-T}\tenq{F}^{-1} \right\} \cdots\text{Eulerian (Almansi) strain tensor}\]
+or 
+
+\begin{align*}
+M_{ij} &= \frac{1}{2}\left\{\delta_{ij} - F_{ik}^{-T}F_{kj}^{-1} \right\} \vc{=}{Hwk}{} \frac{1}{2}\left\{\delta_{ij} - F_{ki}^{-1}F_{kj}^{-1} \right\} \\
+&= \frac{1}{2}\left\{ \delta_{ij} - \frac{\partial x_k}{\partial y_i}\frac{\partial x_k}{\partial y_j} \right\}
+\end{align*}
+\[\cdots \text{Components of Eulerian (Almansi) strain tensor}\]
+
+\begin{itemize}
+
+\item 
+Both $\tenq{E}$ and $\tenq{M}$ are symmetric. 
+
+\item 
+For rigid deformation, $\tenq{F} = \tenq{Q}\Rightarrow \tenq{E} = \tenq{M} = \tenq{0}$
+
+\end{itemize}
+
+\end{note}
+
+
+
+\end{theorem}
+
+
+
+\section{Strain tensor in terms of displacement field}
+
+Recall that 
+
+\begin{align*}
+\hat{\tenq{y}}(\tenq{x}) &= \tenq{x} + \tenq{u}(\tenq{x})\Rightarrow \tenq{F} = \nabla_{\tenq{x}}\hat{\tenq{y}}(\tenq{x}) = \tenq{1} + \nabla_{\tenq{x}}\tenq{u}(\tenq{x})\\
+\hat{\tenq{x}}(\tenq{y}) &= \tenq{y} - \tenq{u}(\tenq{y})\Rightarrow \tenq{F}^{-1} = \nabla_{\tenq{y}}\hat{\tenq{x}}(\tenq{y}) = \tenq{1} - \nabla_{\tenq{y}}\tenq{u}(\tenq{y})\\
+\end{align*}
+
+\begin{align*}
+\tenq{E} 
+& = \frac{1}{2}\left\{ \tenq{F}^T\tenq{F}  - \tenq{1}\right\} \\
+& = \frac{1}{2}\left\{\left[\tenq{1} + \nabla_{\tenq{x}}\tenq{u}(\tenq{x})\right]^T\left[\tenq{1} + \nabla_{\tenq{x}}\tenq{u}(\tenq{x})\right] - \tenq{1}\right\}\\
+& = \frac{1}{2}\left\{\nabla_{\tenq{x}}\tenq{u} + \left(\nabla_{\tenq{x}}\tenq{u}\right)^T + \left(\nabla_{\tenq{x}}\tenq{u}\right)^T\left(\nabla_{\tenq{x}}\tenq{u}\right)\right\}
+\end{align*}
+
+or 
+
+\[E_{ij} = \frac{1}{2}\left(\frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} + \frac{\partial u_k}{\partial x_i}\frac{\partial u_k}{\partial x_j}\right)\]
+
+\begin{align*}
+\tenq{M} 
+& = \frac{1}{2}\left\{\tenq{1} -  \tenq{F}^{-T}\tenq{F}^{-1}\right\} \\
+& = \frac{1}{2}\left\{\tenq{1} - \left[\tenq{1} - \nabla_{\tenq{y}}\tenq{u}(\tenq{y})\right]^T\left[\tenq{1} - \nabla_{\tenq{y}}\tenq{u}(\tenq{y})\right]\right\}\\
+& = \frac{1}{2}\left\{\nabla_{\tenq{y}}\tenq{u} + \left(\nabla_{\tenq{y}}\tenq{u}\right)^T - \left(\nabla_{\tenq{y}}\tenq{u}\right)^T\left(\nabla_{\tenq{y}}\tenq{u}\right)\right\}
+\end{align*}
+
+or 
+
+\[M_{ij} = \frac{1}{2}\left(\frac{\partial u_i}{\partial y_j} + \frac{\partial u_j}{\partial y_i} - \frac{\partial u_k}{\partial y_i}\frac{\partial u_k}{\partial y_j}\right)\]
+
+From polar decomposition theorem
+
+\begin{align*}
+\tenq{F} & = \tenq{Q}\tenq{U}\cdots\text{right decomposition}\\
+& = \tenq{V}\tenq{Q}\cdots\text{left decomposition}
+\end{align*}
+with 
+\[\tenq{U} = \sqrt{\tenq{F}^T\tenq{F}}, \tenq{V} = \sqrt{\tenq{F}\tenq{F}^T}, \tenq{Q} = \tenq{F}\tenq{U}^{-1}= \tenq{V}^{-1}\tenq{F}\]
+
+which is proper orthogonal, $\because \det\tenq{F}>0$ for admissible deformation. 
+
+\begin{definition}\mbox{}\\
+
+\begin{align*}
+\tenq{C} &\vc{=}{\Delta}{}\tenq{F}^T\tenq{F}\text{ called right deformation tensor}\\
+\tenq{G} &\vc{=}{\Delta}{}\tenq{F}\tenq{F}^T\text{ called left deformation tensor}
+\end{align*}
+Then 
+\[\tenq{C} = \tenq{U}^2, \tenq{G} = \tenq{V}^2, \tenq{E} = \frac{1}{2}\left\{\tenq{C}-\tenq{1}\right\}\]
+
+According to the polar decomposition theorem, $\tenq{C}$ and $\tenq{G}$ are both symmetric and positive definite and have the same eigenvalues but different eigenvectors, i.e. different principle frame. 
+
+\end{definition}
+
+\begin{proof}\mbox{}\\
+Let $X = \left\{ {0;\tenq{e}_1,\tenq{e}_2,\tenq{e}_3} \right\} \in \mathscr{F}$ be the principal frame for $\tenq{G}$ and let $\lambda_i>0$ be the three eigenvalues
+
+\[\tenq{G}\tenq{e}_i = \lambda_i\tenq{e}_i\text{ (no sum)}\]
+
+Let $X' = \left\{ {0;\tenq{e}_1',\tenq{e}_2',\tenq{e}_3'} \right\} \in \mathscr{F}$ with $\tenq{e}_i' = \tenq{Q}^T\tenq{e}_i$ such that
+
+\[\tenq{C} = \tenq{Q}^T\tenq{G}\tenq{Q}\]
+
+then 
+
+\[\tenq{C}\tenq{e}_i' = \tenq{Q}^T\tenq{G}\tenq{Q}\tenq{Q}^T\tenq{e}_i = \tenq{Q}^T\tenq{G}\tenq{e}_i = \lambda_i\tenq{Q}^T\tenq{e}_i = \lambda_i\tenq{e}_i'\]
+
+\[\Rightarrow\tenq{C}\tenq{e}_i' = \lambda_i\tenq{e}_i'\]
+
+\end{proof}
+
+
+From \eqref{homogeneous deformation- dot} and \eqref{Lagrangian (Green) strain tensor}
+
+\begin{align*}
+\tenq{v}^*\cdot\tenq{w}^* 
+& = \tenq{v}\cdot\tenq{w} + 2\tenq{v}\cdot\tenq{E}\tenq{w}\\
+& = \tenq{v}\cdot\tenq{w} + \tenq{v}\cdot\tenq{F}^T\tenq{F}\tenq{w} - \tenq{v}\cdot\tenq{w}
+\end{align*}
+
+\begin{equation}
+\Rightarrow \boxed{\tenq{v}^*\cdot\tenq{w}^* = \tenq{v}\cdot\tenq{C}\tenq{w}} \tag{4} \label{deformation- dot}
+\end{equation}
+
+For rigid deformation, $\tenq{C} = \tenq{G} = \tenq{1}$
+
+
+\section{Geometric interpretation of \texorpdfstring{$\tenq{E}$ or $E_{ij}^X$}{Lg}}
+
+
+Define 
+
+\begin{align*}
+\lambda(\tenq{v}) &\vc{=}{\Delta}{}\frac{\abs{\tenq{v}^*}}{\abs{\tenq{v}}}\cdots\text{stretch ratio of }\tenq{v}\\
+\epsilon(\tenq{v}) &\vc{=}{\Delta}{}\frac{\abs{\tenq{v}^*} - \abs{\tenq{v}}}{\abs{\tenq{v}}}\cdots\text{extension ratio of }\tenq{v}
+\end{align*}
+
+\[\Rightarrow \epsilon(\tenq{v}) = \lambda(\tenq{v}) - 1\]
+
+If the deformation is homogeneous, then 
+
+\[\lambda(\alpha\tenq{v}) = \lambda(\tenq{v}), \epsilon(\alpha\tenq{v}) = \epsilon(\tenq{v}), \alpha\in\mathbb{R}, \alpha\neq0\]
+
+Set $\tenq{w} = \tenq{v}$ in \eqref{homogeneous deformation- dot}
+\begin{align*}
+\tenq{v}^*\cdot\tenq{v}^* - \tenq{v}\cdot\tenq{v} 
+& = 2\tenq{v}\cdot\tenq{E}\tenq{v}\\
+\Rightarrow \abs{\tenq{v}^*}^2 - \abs{\tenq{v}}^2 
+& = 2\tenq{v}\cdot\tenq{E}\tenq{v}\\
+\Rightarrow \frac{\abs{\tenq{v}^*}^2 - \abs{\tenq{v}}^2}{\abs{\tenq{v}}^2}
+& = \frac{2\tenq{v}\cdot\tenq{E}\tenq{v}}{\abs{\tenq{v}}^2}\\
+\Rightarrow \lambda^2(\tenq{v}) - 1 
+& = \frac{2\tenq{v}\cdot\tenq{E}\tenq{v}}{\abs{\tenq{v}}^2}
+\end{align*}
+
+\[\Rightarrow \lambda(\tenq{v}) = \sqrt{1 + \frac{2\tenq{v}\cdot\tenq{E}\tenq{v}}{\abs{\tenq{v}}^2}} \phantom{-} \forall \tenq{v}\neq 0\]
+
+Let $X = \left\{ {0;\tenq{e}_1,\tenq{e}_2,\tenq{e}_3} \right\} \in \mathscr{F}$
+
+\begin{align*}
+\epsilon(\tenq{e}_i) &= \lambda(\tenq{e}_i)-1\\
+&= \sqrt{1 + \frac{2\tenq{e}_i\cdot\tenq{E}\tenq{e}_i}{1}} - 1 \text{ (no sum)}\\
+&= \sqrt{1 + 2E_{ii}} - 1 \text{ (no sum)}
+\end{align*}
+
+\[E_{ii}^X = \frac{\lambda^2(\tenq{e}_i) - 1}{2}\text{ (no sum)}\]
+
+So given a frame $X = \left\{ {0;\tenq{e}_1,\tenq{e}_2,\tenq{e}_3} \right\} \in \mathscr{F}$, the diagonal elements $E_{11}^X, E_{22}^X, E_{33}^X$ of the Lagrangian strain tensor in the frame are associated with the length changes of the unit vector of $X$.\\
+
+Interpretation of $E_{ij}^X$, $i\neq j$
+
+\begin{figure}[H]
+\centering
+\resizebox{0.7\textwidth}{!}{\input{figure13.eps_tex}}
+
+\caption{Scheme of change of theta}
+\label{Scheme of change of theta}
+\end{figure}
+
+\begin{align*}
+\tenq{v}^*\cdot\tenq{w}^* &= \abs{\tenq{v}^*}\abs{\tenq{w}^*}\cos(\theta^*(\tenq{v}, \tenq{w}))\\
+& \vc{=}{\eqref{homogeneous deformation- dot}}{} \tenq{v}\cdot\tenq{w} + 2\tenq{v}\cdot\tenq{E}\tenq{w}
+\end{align*}
+Also
+
+\begin{align*}
+\abs{\tenq{v}^*} &= \abs{\tenq{v}}\lambda(\tenq{v}) = \abs{\tenq{v}}\left[1 + \epsilon (\tenq{v}) \right]\\
+\abs{\tenq{w}^*} &= \abs{\tenq{w}}\lambda(\tenq{w}) = \abs{\tenq{w}}\left[1 + \epsilon (\tenq{w}) \right]
+\end{align*}
+
+\begin{align}
+\therefore \cos(\theta^*(\tenq{v}, \tenq{w})) 
+&= \frac{\tenq{v}\cdot\tenq{w} + 2\tenq{v}\cdot\tenq{E}\tenq{w}}{\abs{\tenq{v}^*}\abs{\tenq{w}^*}}\nonumber \\
+&= \frac{\tenq{v}\cdot\tenq{w} + 2\tenq{v}\cdot\tenq{E}\tenq{w}}{\abs{\tenq{v}}\abs{\tenq{w}}\left[1 + \epsilon (\tenq{v}) \right]\left[1 + \epsilon (\tenq{w}) \right]}\tag{$\ast$} \label{cos of deformation} 
+\end{align}
+
+
+Take $\tenq{v} = \tenq{e}_i$, $\tenq{w} = \tenq{e}_j$, $i\neq j$
+\begin{figure}[H]
+\centering
+\resizebox{0.7\textwidth}{!}{\input{figure14.eps_tex}}
+
+\caption{Deformation under principal frame}
+\label{Deformation under principal frame}
+\end{figure}
+
+\[\therefore \cos(\theta^*(\tenq{e}_i, \tenq{e}_j)) = \frac{2\tenq{e}_i\cdot\tenq{E}\tenq{e}_j}{\sqrt{1+2E_{ii}}\sqrt{1+2E_{jj}}}, i \neq j\text{ (no sum)}\]
+
+Define 
+\[\mu_{ij}\vc{=}{\Delta}{}\frac{\pi}{2} - \theta^*(\tenq{e}_i, \tenq{e}_j)\]
+Then
+
+\[
+\boxed{\sin\mu_{ij} = \frac{2E_{ij}^X}{\sqrt{1+2E_{ii}}\sqrt{1+2E_{jj}}}, i \neq j\text{ (no sum)}}
+\]
+
+\[\therefore \text{If } E_{ij}^X = 0,\forall i\neq j\]
+\[\mu_{ij} = 0\text{ or }\theta^*(\tenq{e}_i, \tenq{e}_j) = \frac{\pi}{2}\]
+i.e. 
+\[\tenq{e}_i^*\perp\tenq{e}_j^*\]
+
+Let $X \in \mathscr{F}$ be principal frame for $\tenq{C}$ and therefore principal frame for $\tenq{E}$. ($\because \tenq{C} = 2\tenq{E} + \tenq{1}$) Let $\lambda_i^2$ be eigenvalue for $\tenq{C}$. Then 
+
+\[
+[C_{ij}^X]
+= 
+\begin{bmatrix}
+\lambda_1^2 & 0 & 0\\
+0 & \lambda_2^2 & 0\\
+0 & 0 & \lambda_3^2
+\end{bmatrix}
+=
+\begin{bmatrix}
+1+2E_1 & 0 & 0\\
+0 & 1+2E_2 & 0\\
+0 & 0 & 1+2E_3
+\end{bmatrix}
+\tag{$\ast$} \label{C of deformation}
+\]
+where $E_i$ are eigenvalue of $\tenq{E}$\\
+What's the physical meaning of $\lambda_i$?\\
+From $\eqref{C of deformation}$
+
+\begin{align*}
+\underbrace{\lambda_i}_{\text{mathematical stuff}} 
+& = \sqrt{1 + 2E_i}\vc{=}{X\colon principal frame}{}
+\sqrt{1+2E_{ii}^X}\\
+& = \underbrace{\lambda(\tenq{e}_i^X)}_{\text{physical meaning}}
+\end{align*}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.7\textwidth}{!}{\input{figure15.eps_tex}}
+
+\caption{Deformation under principal frame}
+\label{Deformation under principal frame-2}
+\end{figure}
+
+\begin{note}
+
+The cube and the parallelepiped may have different orientation. 
+
+\end{note}
+
+\section{Volume change}
+
+\[\volume(R_\ast) = \int_{R_\ast} d\volume_{\tenq{y}} = \int_{R}J d\volume_{\tenq{x}}  \vc{=}{homogeneous
+}{deformation}J \int_{R}d\volume_{\tenq{x}} = Jd\volume(R)\]
+\[J = \frac{\volume(R_\ast)}{\volume(R)}\]
+From previous schematic Figure. \ref{Deformation under principal frame-2}, $J = \lambda_1\lambda_2\lambda_3$\\
+
+Define \emph{volume dilatation} as 
+
+\begin{align*}
+\Theta 
+&= \frac{\volume(R_\ast) - \volume(R)}{\volume(R)}\\
+&= \lambda_1\lambda_2\lambda_3 - 1 = \sqrt{\left(1 + 2E_1\right)\left(1 + 2E_2\right)\left(1 + 2E_3\right)} - 1\\
+&= \footnotemark \sqrt{1+2I_1(\tenq{E}) + 4I_2(\tenq{E}) + 8I_3(\tenq{E})} - 1
+\end{align*}
+
+\footnotetext{$I_1(\tenq{E}) = E_1 + E_2 + E_3, I_2(\tenq{E}) = E_1E_2 + E_2E_3 + E_1E_3, I_3(\tenq{E}) = E_1E_2E_3$}
+
+\begin{definition}
+
+$\mathcal{H}$ is a \emph{pure} homogeneous deformation if it is of the form
+
+\[\mathcal{H} \colon \tenq{y} = \hat{\tenq{y}}(\tenq{x}) = \tenq{F}\tenq{x},\tenq{F} = \tenq{F}^T \text{ and }\tenq{F} \text{ is positive definite}\]
+\end{definition}
+
+\paragraph{Properties of the pure homogeneous definition}\mbox{}\\
+In general\\
+\[
+\left.\begin{aligned}
+\tenq{E} &= \frac{1}{2}\left(\tenq{F}^T\tenq{F} - \tenq{1}\right)\\
+\tenq{C} &= \tenq{F}^T\tenq{F}\\
+\tenq{G} &= \tenq{F}\tenq{F}^T
+\end{aligned}\right\}
+\Rightarrow
+\begin{aligned}
+\tenq{E} = \frac{1}{2}\left(\tenq{F}^2 - \tenq{1}\right)\\
+\left.
+\begin{aligned}
+\tenq{C} &= \tenq{F}^2\\
+\tenq{G} &= \tenq{F}^2
+\end{aligned}
+\right\}\Rightarrow
+\tenq{C} = \tenq{G}
+\end{aligned}
+\]
+i.e. 
+\[\tenq{C},\tenq{G},\tenq{E},\tenq{U},\tenq{V} \text{ have same principal axes} \]
+
+\[\tenq{C}, \tenq{G} \cdots \text{same principal values}\]
+\[\tenq{U}, \tenq{V} \cdots \text{same principal values}\]
+
+Consider $X \in \mathscr{F}$ (principal frame for $\tenq{C},\tenq{G},\tenq{E}$)
+
+
+\[
+[C_{ij}^X]
+= 
+[G_{ij}^X]
+=
+\begin{bmatrix}
+\lambda_1^2 & 0 & 0\\
+0 & \lambda_2^2 & 0\\
+0 & 0 & \lambda_3^2
+\end{bmatrix}
+,
+[F_{ij}^X]
+=
+\begin{bmatrix}
+\lambda_1 & 0 & 0\\
+0 & \lambda_2 & 0\\
+0 & 0 & \lambda_3
+\end{bmatrix}
+\]
+
+\begin{align*}
+\mathcal{H} \colon \tenq{y} = \tenq{F}\tenq{x}
+& \Rightarrow y_i^X = F_{ij}^X x_j^X\\
+& \Rightarrow y_i^X = \lambda_{i} x_i^X\text{ (no sum)}
+\end{align*}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.7\textwidth}{!}{\input{figure16.eps_tex}}
+
+\caption{Scheme of pure homogeneous deformation}
+\label{Scheme of pure homogeneous deformation}
+\end{figure}
+
+\begin{note}
+The cube and the rectangular parallelepiped have the \emph{same} orientation. 
+\end{note}
+
+\begin{theorem}{Resolutions of Arbitrary Homogeneous Deformation}\mbox{}\\
+Let $\tenq{y} = \hat{\tenq{y}}(\tenq{x}) = \tenq{F}\tenq{x} + \tenq{c}$, $\det\tenq{F}>0$\\
+Recall $\tenq{F} = \tenq{Q}\tenq{U} = \tenq{V}\tenq{Q}$\\
+where $\tenq{U},\tenq{V}$ are symmetric positive definite, $\tenq{Q}$ is orthogonal.
+
+\begin{alignat*}{4}
+& \mathcal{H}_1' \colon    \quad && \tenq{x}\to\tenq{y}'\colon 	\quad && \tenq{y}' = \tenq{U}\tenq{x}	    \quad && \text{(pure homogeneous } \\
+& \phantom{-}  \quad && \phantom{-}	\quad && \phantom{-}	\quad && \text{deformation)} \\
+& \mathcal{H}_1'' \colon   \quad && \tenq{y}'\to\tenq{y}''\colon 	\quad && \tenq{y}'' = \tenq{Q}\tenq{y}'	    \quad && \text{(rigid deformation about O)}\\
+& \phantom{-}  \quad && \phantom{-}	\quad && \phantom{-}	\quad && \text{(rotation)} \\	
+& \mathcal{H}_1''' \colon  \quad && \tenq{y}''\to\tenq{y}\colon	\quad && \tenq{y} = \tenq{y}'' + \tenq{c}	\quad && \text{(translation)} 		
+\end{alignat*}
+
+Then $\mathcal{H}\colon \tenq{x}\to \tenq{y}\colon\tenq{y} = \tenq{F}\tenq{x}+\tenq{c}$ is given by 
+
+\begin{equation}
+\mathcal{H} = \mathcal{H}_1'''\mathcal{H}_1''\mathcal{H}_1' \tag{$\ast$} \label{arbitary homogeneous deformation_1}
+\end{equation}
+
+Also suppose
+
+\begin{alignat*}{4}
+& \mathcal{H}_2' \colon    \quad && \tenq{x}\to\tenq{y}'\colon 	\quad && \tenq{y}' = \tenq{Q}\tenq{x}	    \quad && \text{(rigid deformation about O)}\\
+& \phantom{-}  \quad && \phantom{-}	\quad && \phantom{-}	\quad && \text{(rotation)} \\
+& \mathcal{H}_2'' \colon   \quad && \tenq{y}'\to\tenq{y}''\colon 	\quad && \tenq{y}'' = \tenq{V}\tenq{y}'	    \quad && \text{(pure homogeneous } \\
+& \phantom{-}  \quad && \phantom{-}	\quad && \phantom{-}	\quad && \text{deformation)} \\
+& \mathcal{H}_2''' \colon  \quad && \tenq{y}''\to\tenq{y}\colon	\quad && \tenq{y} = \tenq{y}'' + \tenq{c}	\quad && \text{(translation)} 		
+\end{alignat*}
+
+Then $\mathcal{H}\colon \tenq{x}\to \tenq{y}\colon\tenq{y} = \tenq{F}\tenq{x}+\tenq{c}$ is given by 
+
+\begin{equation}
+\mathcal{H} = \mathcal{H}_2'''\mathcal{H}_2''\mathcal{H}_2' \tag{$\ast\ast$} \label{arbitary homogeneous deformation_2}
+\end{equation}
+\end{theorem}
+
+\begin{proof}\mbox{}\\
+\[\tenq{y}' = \tenq{U}\tenq{x}, \tenq{y}'' = \tenq{Q}\tenq{y}'\]
+\begin{align*}
+\tenq{y} 
+&= \tenq{y}''+\tenq{c}\\
+&= \tenq{Q}\tenq{U}\tenq{x} + \tenq{c}\\
+&= \tenq{F}\tenq{x} + \tenq{c} \Rightarrow \eqref{arbitary homogeneous deformation_1} \text{ holds}
+\end{align*}
+similar for $\eqref{arbitary homogeneous deformation_2}$. 
+\end{proof}
+
+
+\paragraph{2-D illustration of the two Equivalent Resolution of $\mathcal{H}$}\mbox{}\\
+Let $X\in\mathscr{F}$ be principal frame for $\tenq{U},\tenq{C},\tenq{Q}$ and $X'\in\mathscr{F}$ be principal frame for $\tenq{V},\tenq{G}$.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.9\textwidth}{!}{\input{figure17.eps_tex}}
+
+\caption{Scheme of Resolution of $\mathcal{H}_1$}
+\label{Scheme of Resolution of $H_1$}
+\end{figure}
+\begin{figure}[H]
+\centering
+\resizebox{0.9\textwidth}{!}{\input{figure18.eps_tex}}
+
+\caption{Scheme of Resolution of $\mathcal{H}_2$}
+\label{Scheme of Resolution of $H_2$}
+\end{figure}
+
+Recall that $\tenq{V} = \tenq{Q}\tenq{U}\tenq{Q}^T$, $\tenq{U} = \tenq{Q}^T\tenq{U}\tenq{Q}$. If $\tenq{U}$ is symmetric and $\tenq{Q}$ is proper orthogonal and $X = \left\{ {0;\tenq{e}_1,\tenq{e}_2,\tenq{e}_3} \right\} \in \mathscr{F}$ is principal frame of $\tenq{U}$, $X' = \left\{ {0;\tenq{e}_1',\tenq{e}_2',\tenq{e}_3'} \right\} \in \mathscr{F}$ where $\tenq{e}_1' = \tenq{Q}\tenq{e}_1$ is principal frame for $\tenq{V} = \tenq{Q}\tenq{U}\tenq{Q}^T$.
+
+\section{Direct geometrical interpretation of the Lagrangian Strain tensor field of an admissible deformation (General Deformation)}
+
+Let $\hat{\tenq{y}}\colon R \to R_d$ be an admissible deformation, $\mathring{\tenq{x}}$ an interior point of $R$, and $\mathring{\tenq{\phi}} = \tenq{\phi}(\mathring{\tenq{x}})$ the Lagrangian stain tensor of the deformation.\\
+Let further $X = \left\{ {0;\tenq{e}_1,\tenq{e}_2,\tenq{e}_3} \right\} \in \mathscr{F}$. 
+
+\begin{enumerate}[label=(\alph*)]
+\item 
+Suppose $\Gamma_i$ ($i$ fixed) is a regular arc issuing from $\mathring{\tenq{x}}$, let $s$ be the arc-length along $\Gamma_i$ measured from $\mathring{\tenq{x}}$ and let $\tenq{e}_i$ be tangent to the $\Gamma_i$ at $\mathring{\tenq{x}}$. \\
+
+Thus assume: \\
+Parametrise $\Gamma_i$
+
+\begin{equation}
+\begin{split}
+\Gamma_i \colon \tenq{x} &= \bar{\tenq{x}}(s)\phantom{-}(0\leq s\leq l), \bar{\tenq{x}}\in \footnotemark C^1([0,l])
+,\\ 
+\bar{\tenq{x}}(0)&= \mathring{\tenq{x}}, \bar{\tenq{x}}'(0)=\tenq{e}_i
+\end{split}\tag{1} \label{Parametrise_1}
+\end{equation}
+
+\footnotetext{unique tangent exists}
+
+Let $\accentset{\ast}{\Gamma}_i = \hat{\tenq{y}}(\Gamma_i)\cdots$deformation image of $\Gamma_i$ and $\accentset{\ast}{s}(s)$ the arc-length along $\accentset{\ast}{\Gamma}_i$ measured from $\mathring{\tenq{y}} = \hat{\tenq{y}}(\mathring{\tenq{x}})$.
+Thus
+
+\begin{equation}
+\accentset{\ast}{\Gamma}_i \colon \tenq{y}=\hat{\tenq{y}}(\bar{\tenq{x}}(s)) = \bar{\tenq{y}}(s) \phantom{-}(0\leq s\leq l)\tag{2} \label{Parametrise_2}
+\end{equation}
+
+Then the arc-length along $\accentset{\ast}{\Gamma}_i$ is 
+
+\begin{equation}
+\accentset{\ast}{s}(s) = \int_0^s\left\{\bar{\tenq{y}}'(\sigma)\cdot \bar{\tenq{y}}'(\sigma) \right\}^{1/2}d\sigma \tag{3} \label{Parametrise_3}
+\end{equation}
+and 
+\[\accentset{\ast}{s}'(0)\equiv {\left. {\frac{{d\accentset{\ast}{s}}}{{ds}}} \right|_{s = 0}} = \sqrt{1+2\phi_{ii}(\mathring{\tenq{x}})} \text{ (no sum)}\]
+
+Note also that ${\left. {\frac{{d\accentset{\ast}{s}}}{{ds}}} \right|_{s = 0}} = \lambda(\mathring{\tenq{x}},\tenq{e}_i)$, where $\lambda(\mathring{\tenq{x}},\tenq{e}_i)$ is the stretch ratio of $\tenq{e}_i$ in the approximating local homogeneous deformation of $\mathring{\tenq{x}}$.
+
+\begin{proof}\mbox{}\\
+
+\begin{figure}[H]
+\centering
+\resizebox{0.9\textwidth}{!}{\input{figure19.eps_tex}}
+
+\caption{Scheme of deformation of curve}
+\label{Scheme of deformation of curve}
+\end{figure}
+From \eqref{Parametrise_1}, \eqref{Parametrise_2} one gets
+
+\begin{align*}
+d\accentset{\ast}{s}(s) &= \sqrt{d\tenq{y}\cdot d\tenq{y}} =  \sqrt{\bar{\tenq{y}}'(s)\cdot\bar{\tenq{y}}'(s)}ds\\
+\Rightarrow \accentset{\ast}{s}'(s) &= \sqrt{\bar{\tenq{y}}'(s)\cdot\bar{\tenq{y}}'(s)}\\
+\Rightarrow \accentset{\ast}{s}'(0) &= \sqrt{\bar{\tenq{y}}'(0)\cdot\bar{\tenq{y}}'(0)}\\
+&\vc{=}{Chain}{Rule} \sqrt{{\left. {\frac{{\partial \hat{y_k}}}{{\partial {x_p}}}} \right|_{\tenq{x} = \mathring{\tenq{x}}}} {\left. {\frac{d \bar{x}_p(s)}{ds}} \right|_{s=0}} 
+{\left. {\frac{{\partial \hat{y_k}}}{{\partial {x_g}}}} \right|_{\tenq{x} = \mathring{\tenq{x}}}} {\left. {\frac{d \bar{x}_g(s)}{ds}} \right|_{s=0}}}\\
+&= \sqrt{\hat{y}_{k,p}(\mathring{\tenq{x}})\bar{x}'_p(0)\hat{y}_{k,g}(\mathring{\tenq{x}})\bar{x}'_g(0)}\\
+&= \sqrt{\tenq{F}(\mathring{\tenq{x}})\bar{\tenq{x}}'(0)\cdot\tenq{F}(\mathring{\tenq{x}})\bar{\tenq{x}}'(0)}\\
+&= \sqrt{\left\{\tenq{F}^T(\mathring{\tenq{x}})\tenq{F}(\mathring{\tenq{x}})\tenq{e}_i\right\}\cdot\tenq{e}_i}\text{ (no sum)}
+\end{align*}
+Recall $\bar{\tenq{x}}'(0)=\tenq{e}_i\text{ for }\Gamma_i$
+
+\begin{align*}
+\accentset{\ast}{s}'(0) &= \sqrt{\left\{\left(2\tenq{\phi}(\mathring{\tenq{x}}) + \tenq{1}\right)\tenq{e}_i\right\}\cdot\tenq{e}_i} = \sqrt{2\phi_{ii}(\mathring{\tenq{x}}) + 1 }\text{ (no sum)}\\
+&=\footnotemark \lambda(\mathring{\tenq{x}}, \tenq{e}_i)
+\end{align*}
+\footnotetext{by result of homogeneous definition}
+\end{proof}
+
+\item
+Let $\Gamma_i$, $\Gamma_j$ ($i\neq j$), ($i,j$ fixed) be two regular arcs both issuing from $\mathring{\tenq{x}}$ and having $\tenq{e}_i$, $\tenq{e}_j$ as respective tangent vectors at $\mathring{\tenq{x}}$. 
+
+Let 
+\[\accentset{\ast}{\Gamma}_i = \hat{\tenq{y}}(\Gamma_i), \accentset{\ast}{\Gamma}_j = \hat{\tenq{y}}(\Gamma_j)\]
+
+\begin{figure}[H]
+\centering
+\resizebox{0.9\textwidth}{!}{\input{figure20.eps_tex}}
+\caption{Scheme of deformation of curves, $i \neq j$}
+\label{Scheme of deformation of curve, i does not equal to j}
+\end{figure}
+
+Call $\accentset{\ast}{\theta}(\mathring{\tenq{x}}, \tenq{e}_i, \tenq{e}_j) \in [0,\pi]$ the angle between the tangent vectors of $\accentset{\ast}{\Gamma}_1$ and $\accentset{\ast}{\Gamma}_2$ at $\mathring{\tenq{y}} = \hat{\tenq{y}}(\mathring{\tenq{x}})$, and set
+\[\mathring{\mu}_{ij}\equiv{\mu}_{ij}(\mathring{\tenq{x}}) = \frac{\pi}{2} - \accentset{\ast}{\theta}(\mathring{\tenq{x}}, \tenq{e}_i, \tenq{e}_j)\phantom{-}(i \neq j)\]
+Then 
+\begin{equation}
+\sin\mathring{\mu}_{ij} = \frac{2\mathring{\phi}_{ij}}{\sqrt{1+2\mathring{\phi_{ii}}}\sqrt{1+2\mathring{\phi_{jj}}}}\phantom{-}(i \neq j)\text{ (no sum)} \tag{$\mathsection\mathsection$} \label{sin2}
+\end{equation}
+
+Proof equivalent to part(a) [take as exercise]
+
+Note the $\eqref{sin2}$ coincides with the formula for $\sin\mu_{ij}$ appropriate to the approximately local homogeneous deformation. 
+\end{enumerate}
+
+\begin{note}
+
+We also had proved that any deformation is locally homogeneous. Any deformation in general is \emph{not} in the form of 
+\[\tenq{y}=\hat{\tenq{y}}(\tenq{x})=\tenq{F}\tenq{x}+\tenq{c}\]
+or 
+\[\textit{grad }\hat{\tenq{y}}(\tenq{x}) = \nabla \hat{\tenq{y}} = \accentset{\ast}{\tenq{F}}(\tenq{x})\]
+i.e. $\nabla \hat{\tenq{y}}$ is function of $\tenq{x}$
+
+\end{note}
+
+\section{Infinitesimal deformation}
+
+Consider
+
+\[\hat{\tenq{y}}(\tenq{x}) = \tenq{F}\tenq{x}+\tenq{c} = \tenq{x} + \left(\tenq{F}-\tenq{1}\right)\tenq{x}+\tenq{c} = \tenq{u}(\tenq{x})+\tenq{x}\]
+where
+\[\tenq{u}(\tenq{x}) = \left(\tenq{F}-\tenq{1}\right)\tenq{x}+\tenq{c}\]
+\[\nabla \tenq{u} = \tenq{F} - \tenq{1} = \footnotemark \text{ constant}\]
+\footnotetext{by homogeneous definition}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.6\textwidth}{!}{\input{figure21.eps_tex}}
+
+\caption{Scheme of infinitesimal deformation}
+\label{Scheme of infinitesimal deformation}
+\end{figure}
+
+
+define 
+
+\[\tenq{\varepsilon} = \frac{1}{2}\left(\nabla \tenq{u} + \left(\nabla \tenq{u}\right)^T\right) = \textit{sym }\nabla \tenq{u}\]
+or
+\[\varepsilon_{ij} = \frac{1}{2}\left(u_{i,j} + u_{j,i}\right)\]
+
+\[\tenq{\omega} = \frac{1}{2}\left(\nabla \tenq{u} - \left(\nabla \tenq{u}\right)^T\right) = \textit{skew }\nabla \tenq{u}\]
+or
+\[\omega_{ij} = \frac{1}{2}\left(u_{i,j} - u_{j,i}\right)\]
+
+
+\[\theta = \tr \tenq{\varepsilon} = \varepsilon_{ii} = u_{i,i}\cdots\text{infinitesimal volume dilatation}\]
+
+Assume we have deformation such that 
+\[\abs{\nabla\tenq{u}}\ll 1\text{ or }\sqrt{u_{i,j}u_{i,j}}\ll 1\]
+i.e., infinitesimal deformation
+
+\begin{align*}
+\tenq{E} = \frac{1}{2}\left(\tenq{F}^T\tenq{F}-\tenq{1}\right) 
+&= \frac{1}{2}\left[\left(1+\nabla\tenq{u}\right)\left(1+\left(\nabla\tenq{u}\right)^T\right) - \tenq{1}\right]\\
+&= \frac{1}{2}\left[\nabla\tenq{u}+\left(\nabla\tenq{u}\right)^T + \cancelto{\text{neglected}}{\left(\nabla\tenq{u}\right)^T\left(\nabla\tenq{u}\right)}\right]\\
+&\approx \frac{1}{2}\left[\nabla\tenq{u}+\left(\nabla\tenq{u}\right)^T \right] = \tenq{\varepsilon}
+\end{align*}
+
+\begin{theorem}\mbox{}\\
+
+\[\epsilon(\tenq{e}_i) = \left[1+2E_{ii}\right]^{1/2}-1 \text{ (no sum)}\]
+
+If $\abs{\nabla\tenq{u}}\ll 1$, then 
+\[\epsilon(\tenq{e}_i)\sim E_{ii} \sim \varepsilon_{ii} \text{ (no sum)}\]
+
+Also 
+
+\[\sin\mu_{ij} = \frac{2E_{ij}}{\sqrt{1+2E_{ii}}\sqrt{1+2E_{jj}}}, i\neq j \text{ (no sum)}\]
+
+then 
+
+\[\mu_{ij}\sim 2E_{ij} \sim 2\varepsilon_{ij} , i\neq j\]
+and the volume dilatation
+
+\begin{align*}
+\Theta 
+&= \frac{\volume(R_\ast) - \volume(R)}{\volume(R)} = J\footnotemark -1 = \det(\tenq{1}+\nabla\tenq{u}) - 1\\
+&=\begin{vmatrix}
+1+u_{1,1} & u_{1,2} & u_{1,3}\\
+u_{2,1} & 1+u_{2,2} & u_{2,3}\\
+u_{3,1} & u_{3,2} & 1+u_{3,3}
+\end{vmatrix}  - 1\\
+&\approx u_{1,1}+u_{2,2}+u_{3,3}=u_{i,i}=\tr \nabla\tenq{u} = \tr  \tenq{\varepsilon}
+\end{align*}
+\footnotetext{$J = \det\nabla\hat{\tenq{y}}=\det\tenq{F}$}
+
+\end{theorem}
+
+\begin{note}
+For rigid deformation, $\tenq{y}=\tenq{F}\tenq{x}=\tenq{Q}\tenq{x}$
+\[\tenq{E} = \frac{1}{2}\left(\tenq{F}^T\tenq{F}-\tenq{1}\right) = \frac{1}{2}\left(\tenq{Q}^T\tenq{Q}-\tenq{1}\right) = \tenq{0}\]
+
+but 
+
+\begin{align*}
+\tenq{\varepsilon} 
+&= \frac{1}{2}\left(\nabla\tenq{u}+\left(\nabla\tenq{u}\right)^T\right)\\
+&= \frac{1}{2}\left(\tenq{Q}-\tenq{1}+\tenq{Q}^T-\tenq{1}\right)\\
+&= \frac{1}{2}\left(\tenq{Q}+\tenq{Q}^T-2\tenq{1}\right)\neq\tenq{0}
+\end{align*}
+in general (except $\tenq{Q}\sim\tenq{1}$ or $\tenq{x}\sim\tenq{y}$)\\
+
+Therefore, $\tenq{\varepsilon}$ is not good for rigid deformation. \footnote{In FEM, we always fixed the body because the basic formulas, i.e. shape functions $N$, are based on \emph{infinitesimal deformation.}}
+
+\end{note}
